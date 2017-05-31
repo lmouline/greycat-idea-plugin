@@ -43,6 +43,9 @@
                              implementationClass="greycat.idea.GCMFoldingBuilder"/>
         <lang.formatter language="GCM"
                         implementationClass="greycat.idea.GCMFormattingModelBuilder"/>
+        <gotoSymbolContributor implementation="greycat.idea.GCMChooseByNameContributor"/>
+        <annotator language="GCM"
+                   implementationClass="greycat.idea.GCMTypeNamedAnnotator"/>
 
 
     </extensions>
