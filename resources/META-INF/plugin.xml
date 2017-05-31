@@ -32,6 +32,10 @@
                                implementationClass="greycat.idea.GCMParserDefinition"/>
         <lang.syntaxHighlighterFactory key="GCM"
                                        implementationClass="greycat.idea.GCMSyntaxHighlighterFactory"/>
+        
+        <toolWindow id="GreyCat Base64 Translator" icon="/icons/gcm-16x16.png" anchor="right" secondary="true"
+                    factoryClass="greycat.idea.toolwindow.Base64Window"/>
+
     </extensions>
 
     <actions>

@@ -10,7 +10,7 @@ public interface GCMTypeDeclaration extends GCMNamedElement {
 
   @NotNull
   PsiElement getIdent();
-  
+
   PsiElement setName(String newName);
 
   @Nullable
