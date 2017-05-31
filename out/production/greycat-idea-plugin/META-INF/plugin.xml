@@ -39,6 +39,12 @@
                                 implementationClass="greycat.idea.GCMCompletionContributor"/>
         <lang.braceMatcher language="GCM"
                            implementationClass="greycat.idea.GCMBraceMatcher"/>
+        <lang.foldingBuilder language="GCM"
+                             implementationClass="greycat.idea.GCMFoldingBuilder"/>
+        <lang.formatter language="GCM"
+                        implementationClass="greycat.idea.GCMFormattingModelBuilder"/>
+
+
     </extensions>
 
     <actions>
