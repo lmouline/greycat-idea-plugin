@@ -41,7 +41,7 @@ public class PrettyPrinter {
         if (originalName.equals("String") || originalName.equals("EString") || originalName.equals("EStringObject")) {
             return "String";
         }
-        if (originalName.equals("Boolean") || originalName.equals("EBoolean") || originalName.equals("EBooleanObject")) {
+        if (originalName.equals("Boolean") || originalName.equals("boolean") || originalName.equals("EBoolean") || originalName.equals("EBooleanObject")) {
             return "Bool";
         }
         if (originalName.equals("Integer") || originalName.equals("EInt") || originalName.equals("EIntegerObject")) {
@@ -83,6 +83,7 @@ public class PrettyPrinter {
         sw.write("class " + fqn(cls) + " " + superTypes + " {\n");
 
         for (EAttribute eAttribute : cls.getEAttributes()) {
+            /*
             for (EAnnotation ea : eAttribute.getEAnnotations()) {
                 if (ea.getSource().equals("precision")) {
                     String level = ea.getDetails().get("level");
@@ -92,7 +93,8 @@ public class PrettyPrinter {
                         sw.write("    @precision\n");
                     }
                 }
-            }
+            }*/
+
             if (eAttribute.isID()) {
                 sw.write("    @id\n");
             }
@@ -215,10 +217,14 @@ public class PrettyPrinter {
      * @return the Fully Qualified Class name
      */
     public String fqn(EClassifier cls) {
-        if (cls.getEPackage() == null) {
-            return cls.getName();
+        if (cls.getInstanceClassName() != null) {
+            return cls.getInstanceClassName();
         } else {
-            return fqn(cls.getEPackage()) + "." + cls.getName();
+            if (cls.getEPackage() == null) {
+                return cls.getName();
+            } else {
+                return fqn(cls.getEPackage()) + "." + cls.getName();
+            }
         }
     }
 
