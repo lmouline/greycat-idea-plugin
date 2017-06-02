@@ -2,15 +2,14 @@
     <id>com.datathings.greycat.idea</id>
     <name>Plugin display name here</name>
     <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="contact@datathings.com" url="http://www.datathings.com">DataThings</vendor>
     <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      This plugin aims at ease the edition of GreyCat Model, later use to generate a typing layer for the GreyCat framework.<br>
+      <em>GreyCat is an open source project, source code can be found at <a href="http://greycat.ai">http://greycat.ai</a> or <a href="http://github.com/datathings/greycat">http://github.com/datathings/greycat</a></em>
     ]]></description>
 
     <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      1.0: initial version, supporting basic edition, new file wizzard, completion support...<br>
     ]]>
     </change-notes>
 
