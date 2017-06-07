@@ -1,29 +1,18 @@
 <idea-plugin>
     <id>com.datathings.greycat.idea</id>
-    <name>Plugin display name here</name>
+    <name>GreyCat IDEA</name>
     <version>1.0</version>
     <vendor email="contact@datathings.com" url="http://www.datathings.com">DataThings</vendor>
     <description><![CDATA[
       This plugin aims at ease the edition of GreyCat Model, later use to generate a typing layer for the GreyCat framework.<br>
       <em>GreyCat is an open source project, source code can be found at <a href="http://greycat.ai">http://greycat.ai</a> or <a href="http://github.com/datathings/greycat">http://github.com/datathings/greycat</a></em>
     ]]></description>
-
     <change-notes><![CDATA[
       1.0: initial version, supporting basic edition, new file wizzard, completion support...<br>
     ]]>
     </change-notes>
-
     <category>Custom Languages</category>
-
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="145.0"/>
-
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
-
     <extensions defaultExtensionNs="com.intellij">
         <fileTypeFactory implementation="greycat.idea.GCMFileTypeFactory"/>
         <lang.parserDefinition language="GCM" implementationClass="greycat.idea.GCMParserDefinition"/>
@@ -38,12 +27,25 @@
         <gotoSymbolContributor implementation="greycat.idea.GCMChooseByNameContributor"/>
         <annotator language="GCM" implementationClass="greycat.idea.GCMTypeNamedAnnotator"/>
     </extensions>
-
     <actions>
         <action id="Ecore2GCM" class="greycat.idea.ecore.GCM2EcoreAction"
                 text="Convert to GCM" description="Convert to GCM">
             <add-to-group group-id="RunContextGroup" anchor="last"/>
         </action>
-    </actions>
 
+        <!--
+        <group id="GreyCatPlugin.ActionGroup" popup="true" text="GreyCat" description="MetaModel actions"
+               icon="/icons/gcm-16x16.png">
+
+        </group>
+        -->
+
+        <action id="GCMNewFileAction" text="GreyCat File"
+                description="Create a new GreyCat model in the current project"
+                class="greycat.idea.GCMNewFileAction"
+                icon="/icons/gcm-16x16.png">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFile"/>
+        </action>
+
+    </actions>
 </idea-plugin>
