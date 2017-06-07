@@ -49,8 +49,8 @@ public interface GCMTypes {
   IElementType MULT_SEP = new GCMTokenType(".");
   IElementType NEWLINE = new GCMTokenType("newline");
   IElementType NUMBER = new GCMTokenType("NUMBER");
-  IElementType REF = new GCMTokenType("rel");
-  IElementType REL = new GCMTokenType("REL");
+  IElementType REF = new GCMTokenType("ref");
+  IElementType REL = new GCMTokenType("rel");
   IElementType STRING = new GCMTokenType("string");
   IElementType WITH_TIME = new GCMTokenType("with time");
 
