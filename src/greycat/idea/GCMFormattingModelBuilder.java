@@ -14,7 +14,7 @@ public class GCMFormattingModelBuilder implements FormattingModelBuilder {
     @Override
     public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
         return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(),
-                new GCMBlock(element.getNode(), Alignment.createAlignment(), Wrap.createWrap(WrapType.NONE, false)),settings);
+                new GCMBlock(element.getNode(), Alignment.createAlignment(), Wrap.createWrap(WrapType.NONE, false)), settings);
     }
 
     private static SpacingBuilder createSpaceBuilder(CodeStyleSettings settings) {
