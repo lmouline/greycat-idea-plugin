@@ -57,6 +57,9 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
         if (tokenType.equals(GCMTypes.ATT)) {
             return KEYWORD_KEYS;
         }
+        if (tokenType.equals(GCMTypes.REL)) {
+            return KEYWORD_KEYS;
+        }
         if (tokenType.equals(GCMTypes.REF)) {
             return KEYWORD_KEYS;
         }

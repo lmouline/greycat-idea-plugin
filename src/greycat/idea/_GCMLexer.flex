@@ -43,7 +43,8 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
   "enum"             { return ENUM; }
   "att"              { return ATT; }
   "[]"               { return ARRAY; }
-  "rel"              { return REF; }
+  "rel"              { return REL; }
+  "ref"              { return REF; }
   "extends"          { return EXTENDS; }
   ","                { return COMMA; }
   ":"                { return COLON; }
@@ -55,7 +56,6 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
   "<<EOF>>"          { return EOF; }
   "newline"          { return NEWLINE; }
   "CRLF"             { return CRLF; }
-  "REL"              { return REL; }
 
   {COMMENT}          { return COMMENT; }
   {NUMBER}           { return NUMBER; }
