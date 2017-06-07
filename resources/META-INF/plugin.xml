@@ -25,6 +25,8 @@
         <lang.foldingBuilder language="GCM" implementationClass="greycat.idea.GCMFoldingBuilder"/>
         <lang.formatter language="GCM" implementationClass="greycat.idea.GCMFormattingModelBuilder"/>
         <gotoSymbolContributor implementation="greycat.idea.GCMChooseByNameContributor"/>
+        <lang.psiStructureViewFactory language="GCM"
+                                      implementationClass="greycat.idea.structure.GCMStructureViewFactory"/>
         <annotator language="GCM" implementationClass="greycat.idea.GCMTypeNamedAnnotator"/>
     </extensions>
     <actions>

@@ -41,6 +41,7 @@ public class GCMNewFileAction extends CreateTemplateInPackageAction<PsiElement> 
         String fileName = fileNameFromTypeName(typeName, parameterName);
         StringBuilder sample = new StringBuilder();
         sample.append("class sample.Cloud {\n");
+        sample.append("    att name : String\n");
         sample.append("    rel nodes : sample.Node\n");
         sample.append("}\n");
         sample.append("class sample.Node {\n");
