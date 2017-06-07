@@ -17,12 +17,7 @@ public class GCMCompletionContributor extends CompletionContributor {
     private void fillInsideClassDecl(CompletionResultSet resultSet) {
         resultSet.addElement(LookupElementBuilder.create("att "));
         resultSet.addElement(LookupElementBuilder.create("rel "));
-
-        resultSet.addElement(LookupElementBuilder.create("dependency "));
-        resultSet.addElement(LookupElementBuilder.create("input "));
-        resultSet.addElement(LookupElementBuilder.create("output "));
-        resultSet.addElement(LookupElementBuilder.create("with "));
-        resultSet.addElement(LookupElementBuilder.create("func "));
+        resultSet.addElement(LookupElementBuilder.create("ref "));
     }
 
     public GCMCompletionContributor() {
@@ -217,6 +212,7 @@ public class GCMCompletionContributor extends CompletionContributor {
         );
         */
 
+        /*
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.IDENT).withText("Continuous")),
                 new CompletionProvider<CompletionParameters>() {
@@ -226,8 +222,9 @@ public class GCMCompletionContributor extends CompletionContributor {
                         resultSet.addElement(LookupElementBuilder.create("precision "));
                     }
                 }
-        );
+        );*/
 
+        /*
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.IDENT)),
                 new CompletionProvider<CompletionParameters>() {
@@ -243,7 +240,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                         }
                     }
                 }
-        );
+        );*/
 
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).beforeLeaf(PlatformPatterns.psiElement(GCMTypes.ATT)),
@@ -258,6 +255,17 @@ public class GCMCompletionContributor extends CompletionContributor {
 
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).beforeLeaf(PlatformPatterns.psiElement(GCMTypes.REF)),
+                new CompletionProvider<CompletionParameters>() {
+                    public void addCompletions(@NotNull CompletionParameters parameters,
+                                               ProcessingContext context,
+                                               @NotNull CompletionResultSet resultSet) {
+                        fillInsideClassDecl(resultSet);
+                    }
+                }
+        );
+
+        extend(CompletionType.BASIC,
+                PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).beforeLeaf(PlatformPatterns.psiElement(GCMTypes.REL)),
                 new CompletionProvider<CompletionParameters>() {
                     public void addCompletions(@NotNull CompletionParameters parameters,
                                                ProcessingContext context,

@@ -2,7 +2,7 @@ package greycat.idea;
 
 public enum GCMPrimitiveTypes {
 
-    String, Long, Integer, Bool, Double, Continuous;
+    String, Long, Integer, Bool, Double;
 
     public static boolean isPrimitive(String originalName) {
         for (GCMPrimitiveTypes p : GCMPrimitiveTypes.values()) {
