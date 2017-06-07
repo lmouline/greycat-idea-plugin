@@ -5,7 +5,7 @@ Here's how to start...
 ### Install
 First, open IntelliJ and install the GreyCat IDEA plugin.
 
-### Starting from scratch!
+### Starting from scratch
 #### Create a new Java project.
 
 ![createProj](../img/new_project.png)
@@ -20,11 +20,12 @@ First, open IntelliJ and install the GreyCat IDEA plugin.
 [Figure 3: Defining classes, enums, attributes and relations](id:fig-fieldTypes)
 
 Your domain model consists of classes and enums, just like in most object-oriented languages. 
-Inside classes, you can define attributes and relationships. 
+Inside classes, you can define attributes and relationships.
+
+Attributes must be from one of the primitive types: String, Double, Long, Integer, Boolean, or an array of a primitive type.
+
 GreyCat distinguishes between two different relationships: relations(rel) and references (ref). 
-The difference is that a reference is basically a to-one relation whereas a relation is a to-many relation. 
-
-
+The difference is that a reference is basically a to-one relation whereas a relation is a to-many relation.
 
 
 
