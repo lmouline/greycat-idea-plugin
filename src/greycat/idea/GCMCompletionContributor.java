@@ -6,10 +6,7 @@ import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.util.ProcessingContext;
-import greycat.idea.psi.GCMAttributeDeclaration;
-import greycat.idea.psi.GCMDeclaration;
-import greycat.idea.psi.GCMRelationDeclaration;
-import greycat.idea.psi.GCMTypes;
+import greycat.idea.psi.*;
 import org.jetbrains.annotations.NotNull;
 
 public class GCMCompletionContributor extends CompletionContributor {
@@ -48,7 +45,22 @@ public class GCMCompletionContributor extends CompletionContributor {
                                         }
                                     });
                                     resultSet.stopHere();
-                                } else if (parameters.getPosition().getParent().getParent() instanceof GCMRelationDeclaration) {
+                                } else if (parameters.getPosition().getParent().getParent() instanceof GCMToManyDeclaration) {
+                                    //add all know types
+                                    parameters.getOriginalFile().acceptChildren(new PsiElementVisitor() {
+                                        @Override
+                                        public void visitElement(PsiElement element) {
+                                            if (element instanceof GCMDeclaration) {
+                                                GCMDeclaration declaration = (GCMDeclaration) element;
+                                                if (declaration.getClassDeclaration() != null && declaration.getClassDeclaration().getTypeDeclaration() != null) {
+                                                    resultSet.addElement(LookupElementBuilder.create(declaration.getClassDeclaration().getTypeDeclaration()));
+                                                }
+                                            }
+                                            super.visitElement(element);
+                                        }
+                                    });
+                                    resultSet.stopHere();
+                                } else if (parameters.getPosition().getParent().getParent() instanceof GCMToOneDeclaration) {
                                     //add all know types
                                     parameters.getOriginalFile().acceptChildren(new PsiElementVisitor() {
                                         @Override
@@ -242,6 +254,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                 }
         );*/
 
+        /*
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).beforeLeaf(PlatformPatterns.psiElement(GCMTypes.ATT)),
                 new CompletionProvider<CompletionParameters>() {
@@ -273,7 +286,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                         fillInsideClassDecl(resultSet);
                     }
                 }
-        );
+        );*/
 
         /*
         extend(CompletionType.BASIC,
@@ -345,6 +358,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                 }
         );*/
 
+
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).beforeLeaf(PlatformPatterns.psiElement(GCMTypes.BODY_CLOSE)),
                 new CompletionProvider<CompletionParameters>() {
@@ -352,6 +366,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
                         fillInsideClassDecl(resultSet);
+                        resultSet.stopHere();
                     }
                 }
         );
@@ -363,6 +378,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
                         fillInsideClassDecl(resultSet);
+                        resultSet.stopHere();
                     }
                 }
         );

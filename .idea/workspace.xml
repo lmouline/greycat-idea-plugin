@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="" />
+    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" afterPath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,114 +28,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GCMCompletionContributor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GCMCompletionContributor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3990">
-              <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
+            <state relative-caret-position="419">
+              <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
               <folding>
-                <marker date="1496842740000" expanded="false" signature="13036:13336" ph="(parameters, context, resultSet) → {" />
-                <marker date="1496842740000" expanded="false" signature="13442:13465" ph="}" />
-                <marker date="1496842740000" expanded="false" signature="13681:13981" ph="(parameters, context, resultSet) → {" />
-                <marker date="1496842740000" expanded="false" signature="14386:14409" ph="}" />
+                <element signature="e#963#5540#0" expanded="true" />
+                <element signature="e#3184#4105#0" expanded="true" />
+                <element signature="e#4104#4105#0" expanded="true" />
+                <element signature="e#4429#5350#0" expanded="true" />
+                <element signature="e#5349#5350#0" expanded="true" />
+                <element signature="e#5539#5540#0" expanded="true" />
+                <element signature="e#21273#21715#0" expanded="true" />
+                <element signature="e#21714#21715#0" expanded="true" />
+                <element signature="e#21922#22364#0" expanded="true" />
+                <element signature="e#22363#22364#0" expanded="true" />
+                <marker date="1496904302000" expanded="false" signature="14135:14435" ph="(parameters, context, resultSet) → {" />
+                <marker date="1496904302000" expanded="false" signature="14541:14564" ph="}" />
+                <marker date="1496904302000" expanded="false" signature="14780:15080" ph="(parameters, context, resultSet) → {" />
+                <marker date="1496904302000" expanded="false" signature="15485:15508" ph="}" />
+                <marker date="1496904302000" expanded="false" signature="16919:17244" ph="(parameters, context, resultSet) → { " />
+                <marker date="1496904302000" expanded="false" signature="17275:17315" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GCMUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMUtil.java">
+      <file leaf-file-name="CompletionProvider.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionProvider.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GCMTypeNamedAnnotator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMTypeNamedAnnotator.java">
+      <file leaf-file-name="CompletionContributor.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionContributor.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gcm.bnf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
-              <folding>
-                <marker date="1496850952000" expanded="true" signature="635:1724" ph="{..}" />
-                <marker date="1496850952000" expanded="true" signature="1181:1722" ph="[..]" />
-                <marker date="1496850952000" expanded="true" signature="2046:2166" ph="{..}" />
-                <marker date="1496850952000" expanded="false" signature="2138:2165" ph="[..]" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMNamedElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMNamedElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="51" lean-forward="false" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMNamedElementImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMNamedElementImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMParserDefinition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMParserDefinition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding>
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMPrimitiveTypes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMPrimitiveTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMReference.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMReference.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GCMSyntaxHighlighter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-221">
-              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="471">
+              <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -152,6 +89,7 @@
       <find>Met</find>
       <find>COLON</find>
       <find>annotationHolder</find>
+      <find>resultSet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,8 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/greycat/idea/GCMParserDefinition.java" />
-        <option value="$PROJECT_DIR$/src/greycat/idea/GCMFile.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMNamedElement.java" />
         <option value="$PROJECT_DIR$/gen/greycat/idea/psi/GCMVisitor.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMNamedElementImpl.java" />
@@ -178,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMIcons.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/gcm.bnf" />
-        <option value="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" />
         <option value="$PROJECT_DIR$/gen/greycat/idea/toolwindow/Base64ToolBar.java" />
         <option value="$PROJECT_DIR$/gen/greycat/idea/toolwindow/Base64ToolWindowPanel.java" />
         <option value="$PROJECT_DIR$/gen/greycat/idea/toolwindow/Base64Window.java" />
@@ -211,11 +146,14 @@
         <option value="$PROJECT_DIR$/src/greycat/idea/structure/GCMStructureViewReferenceElement.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMPrimitiveTypes.java" />
-        <option value="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMFormattingModelBuilder.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMTypeNamedAnnotator.java" />
+        <option value="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" />
+        <option value="$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionProvider.class" />
+        <option value="$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionContributor.class" />
+        <option value="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" />
       </list>
     </option>
   </component>
@@ -396,81 +334,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="psi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="psi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="greycat-idea-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -960,12 +824,12 @@
       <workItem from="1496311315257" duration="1992000" />
       <workItem from="1496323742781" duration="5725000" />
       <workItem from="1496822278873" duration="5248000" />
-      <workItem from="1496842450876" duration="3846000" />
+      <workItem from="1496842450876" duration="5023000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28025000" />
+    <option name="totallyTimeSpent" value="29202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -984,7 +848,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Kevoree Base64 Translator" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1020,7 +884,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1029,23 +901,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMIcons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/PsiNameIdentifierOwner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1217,14 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMClassDeclaration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1381,8 +1228,8 @@
         <state relative-caret-position="195">
           <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1120#1121#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1411,19 +1258,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
-          <folding>
-            <marker date="1496842740000" expanded="false" signature="13036:13336" ph="(parameters, context, resultSet) → {" />
-            <marker date="1496842740000" expanded="false" signature="13442:13465" ph="}" />
-            <marker date="1496842740000" expanded="false" signature="13681:13981" ph="(parameters, context, resultSet) → {" />
-            <marker date="1496842740000" expanded="false" signature="14386:14409" ph="}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1434,7 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
+        <state relative-caret-position="724">
           <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
           <folding>
             <marker date="1496850952000" expanded="true" signature="635:1724" ph="{..}" />
@@ -1447,9 +1281,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMTypeNamedAnnotator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="319">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionContributor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+          <folding>
+            <element signature="e#963#5540#0" expanded="true" />
+            <element signature="e#3184#4105#0" expanded="true" />
+            <element signature="e#4104#4105#0" expanded="true" />
+            <element signature="e#4429#5350#0" expanded="true" />
+            <element signature="e#5349#5350#0" expanded="true" />
+            <element signature="e#5539#5540#0" expanded="true" />
+            <element signature="e#21273#21715#0" expanded="true" />
+            <element signature="e#21714#21715#0" expanded="true" />
+            <element signature="e#21922#22364#0" expanded="true" />
+            <element signature="e#22363#22364#0" expanded="true" />
+            <marker date="1496904302000" expanded="false" signature="14135:14435" ph="(parameters, context, resultSet) → {" />
+            <marker date="1496904302000" expanded="false" signature="14541:14564" ph="}" />
+            <marker date="1496904302000" expanded="false" signature="14780:15080" ph="(parameters, context, resultSet) → {" />
+            <marker date="1496904302000" expanded="false" signature="15485:15508" ph="}" />
+            <marker date="1496904302000" expanded="false" signature="16919:17244" ph="(parameters, context, resultSet) → { " />
+            <marker date="1496904302000" expanded="false" signature="17275:17315" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
