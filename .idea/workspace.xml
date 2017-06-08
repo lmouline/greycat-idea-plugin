@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" afterPath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java" />
-    </list>
+    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="GCMCompletionContributor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+            <state relative-caret-position="329">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="e#963#5540#0" expanded="true" />
                 <element signature="e#3184#4105#0" expanded="true" />
@@ -824,12 +821,12 @@
       <workItem from="1496311315257" duration="1992000" />
       <workItem from="1496323742781" duration="5725000" />
       <workItem from="1496822278873" duration="5248000" />
-      <workItem from="1496842450876" duration="5023000" />
+      <workItem from="1496842450876" duration="6226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29202000" />
+    <option name="totallyTimeSpent" value="30405000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -860,7 +857,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15779014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16017488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1313,8 +1310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        <state relative-caret-position="329">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding>
             <element signature="e#963#5540#0" expanded="true" />
             <element signature="e#3184#4105#0" expanded="true" />
