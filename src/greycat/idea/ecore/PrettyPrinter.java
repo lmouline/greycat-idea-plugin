@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.io.Writer;
 
 public class PrettyPrinter {
@@ -45,7 +46,7 @@ public class PrettyPrinter {
             return "Bool";
         }
         if (originalName.equals("Integer") || originalName.equals("EInt") || originalName.equals("EIntegerObject")) {
-            return "Int";
+            return "Integer";
         }
         if (originalName.equals("Long") || originalName.equals("ELong") || originalName.equals("ELongObject")) {
             return "Long";
@@ -82,6 +83,7 @@ public class PrettyPrinter {
         sw.write("\n");
         sw.write("class " + fqn(cls) + " " + superTypes + " {\n");
 
+        StringBuffer ids = new StringBuffer();
         for (EAttribute eAttribute : cls.getEAttributes()) {
             /*
             for (EAnnotation ea : eAttribute.getEAnnotations()) {
@@ -94,28 +96,17 @@ public class PrettyPrinter {
                     }
                 }
             }*/
-
             if (eAttribute.isID()) {
-                sw.write("    @id\n");
+                if (ids.length() == 0) {
+                    ids.append("\n\tindexed by " + eAttribute.getName());
+                } else {
+                    ids.append("," + eAttribute.getName());
+                }
             }
-            /*
-            String multiplicity = "";
-            if (eAttribute.getUpperBound() != 1 || eAttribute.getLowerBound() != 1) {
-                multiplicity = multiplicity + "[";
-                if (eAttribute.getLowerBound() == -1) {
-                    multiplicity = multiplicity + "*";
-                } else {
-                    multiplicity = multiplicity + eAttribute.getLowerBound();
-                }
-                multiplicity = multiplicity + ",";
-                if (eAttribute.getUpperBound() == -1) {
-                    multiplicity = multiplicity + "*";
-                } else {
-                    multiplicity = multiplicity + eAttribute.getUpperBound();
-                }
-                multiplicity = multiplicity + "]";
-            }*/
             sw.append("    att " + eAttribute.getName() + " : " + convertType(fqn(eAttribute.getEType())) + /*multiplicity +*/ "\n");
+        }
+        if (ids.length() > 0) {
+            sw.write(ids.toString() + "\n");
         }
         for (EReference eRef : cls.getEReferences()) {
             /*
