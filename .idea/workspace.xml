@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMFormattingModelBuilder.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMFormattingModelBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMTypeNamedAnnotator.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMTypeNamedAnnotator.java" />
-    </list>
+    <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3990">
-              <caret line="335" column="0" lean-forward="true" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
+              <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
               <folding>
                 <marker date="1496842740000" expanded="false" signature="13036:13336" ph="(parameters, context, resultSet) → {" />
                 <marker date="1496842740000" expanded="false" signature="13442:13465" ph="}" />
@@ -68,10 +64,12 @@
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="69" column="15" lean-forward="false" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+              <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
               <folding>
-                <element signature="e#635#1710#0" expanded="true" />
-                <element signature="e#1181#1708#0" expanded="true" />
+                <marker date="1496850952000" expanded="true" signature="635:1724" ph="{..}" />
+                <marker date="1496850952000" expanded="true" signature="1181:1722" ph="[..]" />
+                <marker date="1496850952000" expanded="true" signature="2046:2166" ph="{..}" />
+                <marker date="1496850952000" expanded="false" signature="2138:2165" ph="[..]" />
               </folding>
             </state>
           </provider>
@@ -237,7 +235,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="2560" />
-    <option name="height" value="1418" />
+    <option name="height" value="1414" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -962,12 +960,12 @@
       <workItem from="1496311315257" duration="1992000" />
       <workItem from="1496323742781" duration="5725000" />
       <workItem from="1496822278873" duration="5248000" />
-      <workItem from="1496842450876" duration="3608000" />
+      <workItem from="1496842450876" duration="3846000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27787000" />
+    <option name="totallyTimeSpent" value="28025000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -979,7 +977,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
+    <frame x="0" y="22" width="2560" height="1414" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1004,7 +1002,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21719457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21785174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1355,9 +1353,9 @@
         <state relative-caret-position="165">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1004#1005#0" expanded="false" />
+            <element signature="e#1031#1032#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1416,7 +1414,7 @@
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMCompletionContributor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3990">
-          <caret line="335" column="0" lean-forward="true" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
+          <caret line="335" column="0" lean-forward="false" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
           <folding>
             <marker date="1496842740000" expanded="false" signature="13036:13336" ph="(parameters, context, resultSet) → {" />
             <marker date="1496842740000" expanded="false" signature="13442:13465" ph="}" />
@@ -1437,10 +1435,12 @@
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="69" column="15" lean-forward="false" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+          <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
           <folding>
-            <element signature="e#635#1710#0" expanded="true" />
-            <element signature="e#1181#1708#0" expanded="true" />
+            <marker date="1496850952000" expanded="true" signature="635:1724" ph="{..}" />
+            <marker date="1496850952000" expanded="true" signature="1181:1722" ph="[..]" />
+            <marker date="1496850952000" expanded="true" signature="2046:2166" ph="{..}" />
+            <marker date="1496850952000" expanded="false" signature="2138:2165" ph="[..]" />
           </folding>
         </state>
       </provider>
