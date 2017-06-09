@@ -11,10 +11,10 @@ First, open IntelliJ and install the GreyCat IDEA plugin.
 ![createProj](../img/new_project.png)
 [Figure 1: Creating a new project](id:fig-new-project)
 
-Then, include the maven dependency to the GreyCat modeling generator.
+Then, include the maven dependency to the GreyCat maven plugin.
 The generator takes your GreyCat model as input and generates typed GreyCat nodes.   
 ![mvnDependency](../img/mvn_dependency.png)
-[Figure 2: Defining the maven dependency to the GreyCat generator](id:fig-new-project)
+[Figure 2: Defining the maven dependency to the GreyCat maven plugin](id:fig-new-project)
 
 
 #### Create a new GreyCat model
