@@ -17,6 +17,8 @@ public interface GCMTypes {
   IElementType DECLARATION = new GCMElementType("DECLARATION");
   IElementType ENUM_DECLARATION = new GCMElementType("ENUM_DECLARATION");
   IElementType ENUM_ELEM_DECLARATION = new GCMElementType("ENUM_ELEM_DECLARATION");
+  IElementType INDEXED_WITHOUT_TIME_DECLARATION = new GCMElementType("INDEXED_WITHOUT_TIME_DECLARATION");
+  IElementType INDEXED_WITH_TIME_DECLARATION = new GCMElementType("INDEXED_WITH_TIME_DECLARATION");
   IElementType INDEX_DECLARATION = new GCMElementType("INDEX_DECLARATION");
   IElementType INDEX_NAME_DECLARATION = new GCMElementType("INDEX_NAME_DECLARATION");
   IElementType PARENTS_DECLARATION = new GCMElementType("PARENTS_DECLARATION");
@@ -34,7 +36,6 @@ public interface GCMTypes {
   IElementType ATT = new GCMTokenType("att");
   IElementType BODY_CLOSE = new GCMTokenType("}");
   IElementType BODY_OPEN = new GCMTokenType("{");
-  IElementType BY = new GCMTokenType("by");
   IElementType CLASS = new GCMTokenType("class");
   IElementType COLON = new GCMTokenType(":");
   IElementType COMMA = new GCMTokenType(",");
@@ -44,15 +45,14 @@ public interface GCMTypes {
   IElementType EOF = new GCMTokenType("<<EOF>>");
   IElementType EXTENDS = new GCMTokenType("extends");
   IElementType IDENT = new GCMTokenType("IDENT");
-  IElementType INDEXED = new GCMTokenType("indexed");
   IElementType INDEXED_BY = new GCMTokenType("indexed by");
+  IElementType INDEXED_WITH_TIME_BY = new GCMTokenType("indexed with time by");
   IElementType MULT_SEP = new GCMTokenType(".");
   IElementType NEWLINE = new GCMTokenType("newline");
   IElementType NUMBER = new GCMTokenType("NUMBER");
   IElementType REF = new GCMTokenType("ref");
   IElementType REL = new GCMTokenType("rel");
   IElementType STRING = new GCMTokenType("string");
-  IElementType WITH_TIME = new GCMTokenType("with time");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
@@ -77,6 +77,12 @@ public interface GCMTypes {
       }
       else if (type == ENUM_ELEM_DECLARATION) {
         return new GCMEnumElemDeclarationImpl(node);
+      }
+      else if (type == INDEXED_WITHOUT_TIME_DECLARATION) {
+        return new GCMIndexedWithoutTimeDeclarationImpl(node);
+      }
+      else if (type == INDEXED_WITH_TIME_DECLARATION) {
+        return new GCMIndexedWithTimeDeclarationImpl(node);
       }
       else if (type == INDEX_DECLARATION) {
         return new GCMIndexDeclarationImpl(node);

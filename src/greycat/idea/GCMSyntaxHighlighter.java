@@ -24,7 +24,7 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
     public static final TextAttributesKey COMMENT = createTextAttributesKey("MM_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
     public static final TextAttributesKey IDENT = createTextAttributesKey("MM_IDENT", DefaultLanguageHighlighterColors.STATIC_METHOD);
     public static final TextAttributesKey NUMBER = createTextAttributesKey("MM_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
-   // public static final TextAttributesKey ANNOTATION = createTextAttributesKey("MM_ANNOTATION", DefaultLanguageHighlighterColors.METADATA);
+    // public static final TextAttributesKey ANNOTATION = createTextAttributesKey("MM_ANNOTATION", DefaultLanguageHighlighterColors.METADATA);
     public static final TextAttributesKey BAD_CHARACTER = createTextAttributesKey("MM_BAD_CHARACTER", new TextAttributes(JBColor.RED, null, null, null, Font.BOLD));
 
     private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
@@ -64,6 +64,18 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
             return KEYWORD_KEYS;
         }
         if (tokenType.equals(GCMTypes.EXTENDS)) {
+            return KEYWORD_KEYS;
+        }
+        if (tokenType.equals(GCMTypes.INDEXED_BY)) {
+            return KEYWORD_KEYS;
+        }
+        if (tokenType.equals(GCMTypes.INDEXED_WITH_TIME_BY)) {
+            return KEYWORD_KEYS;
+        }
+        if (tokenType.equals(GCMTypes.INDEXED_BY)) {
+            return KEYWORD_KEYS;
+        }
+        if (tokenType.equals(GCMTypes.AS)) {
             return KEYWORD_KEYS;
         }
         /* Separator */

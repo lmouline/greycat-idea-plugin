@@ -8,33 +8,23 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static greycat.idea.psi.GCMTypes.*;
-import greycat.idea.GCMNamedElementImpl;
+import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMTypeDeclarationImpl extends GCMNamedElementImpl implements GCMTypeDeclaration {
+public class GCMIndexedWithTimeDeclarationImpl extends ASTWrapperPsiElement implements GCMIndexedWithTimeDeclaration {
 
-  public GCMTypeDeclarationImpl(ASTNode node) {
+  public GCMIndexedWithTimeDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitTypeDeclaration(this);
+    visitor.visitIndexedWithTimeDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof GCMVisitor) accept((GCMVisitor)visitor);
     else super.accept(visitor);
-  }
-
-  @Override
-  @NotNull
-  public PsiElement getIdent() {
-    return findNotNullChildByType(IDENT);
-  }
-
-  public PsiElement getNameIdentifier() {
-    return GCMUtil.getNameIdentifier(this);
   }
 
 }

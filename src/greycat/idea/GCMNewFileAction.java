@@ -47,10 +47,12 @@ public class GCMNewFileAction extends CreateTemplateInPackageAction<PsiElement> 
         sample.append("class sample.Node {\n");
         sample.append("    att name : String\n");
         sample.append("    rel softwares : sample.Software\n");
+        sample.append("    rel indexedSoftware : sample.Software indexed by name\n");
         sample.append("}\n");
         sample.append("class sample.Software {\n");
         sample.append("    att name : String\n");
         sample.append("    att size : Integer\n");
+        sample.append("    indexed by name as MyIndexName\n");
         sample.append("}\n");
         return GCMTemplatesFactory.createFromTemplate(psiDirectory, fileName, template, sample.toString());
     }

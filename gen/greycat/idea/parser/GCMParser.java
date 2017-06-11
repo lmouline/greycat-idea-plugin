@@ -44,6 +44,12 @@ public class GCMParser implements PsiParser, LightPsiParser {
     else if (t == ENUM_ELEM_DECLARATION) {
       r = ENUM_ELEM_DECLARATION(b, 0);
     }
+    else if (t == INDEXED_WITHOUT_TIME_DECLARATION) {
+      r = INDEXED_WITHOUT_TIME_DECLARATION(b, 0);
+    }
+    else if (t == INDEXED_WITH_TIME_DECLARATION) {
+      r = INDEXED_WITH_TIME_DECLARATION(b, 0);
+    }
     else if (t == INDEX_DECLARATION) {
       r = INDEX_DECLARATION(b, 0);
     }
@@ -238,44 +244,70 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INDEXED WITH_TIME? BY ATTRIBUTE_NAME (COMMA ATTRIBUTE_NAME)* (AS INDEX_NAME_DECLARATION)?
-  public static boolean INDEX_DECLARATION(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION")) return false;
-    if (!nextTokenIs(b, INDEXED)) return false;
+  // INDEXED_BY
+  public static boolean INDEXED_WITHOUT_TIME_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEXED_WITHOUT_TIME_DECLARATION")) return false;
+    if (!nextTokenIs(b, INDEXED_BY)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, INDEXED);
-    r = r && INDEX_DECLARATION_1(b, l + 1);
-    r = r && consumeToken(b, BY);
-    r = r && ATTRIBUTE_NAME(b, l + 1);
-    r = r && INDEX_DECLARATION_4(b, l + 1);
-    r = r && INDEX_DECLARATION_5(b, l + 1);
-    exit_section_(b, m, INDEX_DECLARATION, r);
+    r = consumeToken(b, INDEXED_BY);
+    exit_section_(b, m, INDEXED_WITHOUT_TIME_DECLARATION, r);
     return r;
   }
 
-  // WITH_TIME?
-  private static boolean INDEX_DECLARATION_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_1")) return false;
-    consumeToken(b, WITH_TIME);
-    return true;
+  /* ********************************************************** */
+  // INDEXED_WITH_TIME_BY
+  public static boolean INDEXED_WITH_TIME_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEXED_WITH_TIME_DECLARATION")) return false;
+    if (!nextTokenIs(b, INDEXED_WITH_TIME_BY)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, INDEXED_WITH_TIME_BY);
+    exit_section_(b, m, INDEXED_WITH_TIME_DECLARATION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // (INDEXED_WITH_TIME_DECLARATION | INDEXED_WITHOUT_TIME_DECLARATION) ATTRIBUTE_NAME (COMMA ATTRIBUTE_NAME)* (AS INDEX_NAME_DECLARATION)?
+  public static boolean INDEX_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION")) return false;
+    if (!nextTokenIs(b, "<index declaration>", INDEXED_BY, INDEXED_WITH_TIME_BY)) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, INDEX_DECLARATION, "<index declaration>");
+    r = INDEX_DECLARATION_0(b, l + 1);
+    r = r && ATTRIBUTE_NAME(b, l + 1);
+    r = r && INDEX_DECLARATION_2(b, l + 1);
+    r = r && INDEX_DECLARATION_3(b, l + 1);
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  // INDEXED_WITH_TIME_DECLARATION | INDEXED_WITHOUT_TIME_DECLARATION
+  private static boolean INDEX_DECLARATION_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = INDEXED_WITH_TIME_DECLARATION(b, l + 1);
+    if (!r) r = INDEXED_WITHOUT_TIME_DECLARATION(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   // (COMMA ATTRIBUTE_NAME)*
-  private static boolean INDEX_DECLARATION_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_4")) return false;
+  private static boolean INDEX_DECLARATION_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION_2")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!INDEX_DECLARATION_4_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "INDEX_DECLARATION_4", c)) break;
+      if (!INDEX_DECLARATION_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "INDEX_DECLARATION_2", c)) break;
       c = current_position_(b);
     }
     return true;
   }
 
   // COMMA ATTRIBUTE_NAME
-  private static boolean INDEX_DECLARATION_4_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_4_0")) return false;
+  private static boolean INDEX_DECLARATION_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, COMMA);
@@ -285,15 +317,15 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   // (AS INDEX_NAME_DECLARATION)?
-  private static boolean INDEX_DECLARATION_5(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_5")) return false;
-    INDEX_DECLARATION_5_0(b, l + 1);
+  private static boolean INDEX_DECLARATION_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION_3")) return false;
+    INDEX_DECLARATION_3_0(b, l + 1);
     return true;
   }
 
   // AS INDEX_NAME_DECLARATION
-  private static boolean INDEX_DECLARATION_5_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_5_0")) return false;
+  private static boolean INDEX_DECLARATION_3_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "INDEX_DECLARATION_3_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, AS);
@@ -390,7 +422,7 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // REL RELATION_NAME COLON TYPE_DECLARATION RELATION_INDEX_DECLARATION?
+  // REL RELATION_NAME COLON TYPE_DECLARATION (RELATION_INDEX_DECLARATION)?
   public static boolean TO_MANY_DECLARATION(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "TO_MANY_DECLARATION")) return false;
     if (!nextTokenIs(b, REL)) return false;
@@ -405,11 +437,21 @@ public class GCMParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // RELATION_INDEX_DECLARATION?
+  // (RELATION_INDEX_DECLARATION)?
   private static boolean TO_MANY_DECLARATION_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "TO_MANY_DECLARATION_4")) return false;
-    RELATION_INDEX_DECLARATION(b, l + 1);
+    TO_MANY_DECLARATION_4_0(b, l + 1);
     return true;
+  }
+
+  // (RELATION_INDEX_DECLARATION)
+  private static boolean TO_MANY_DECLARATION_4_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "TO_MANY_DECLARATION_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = RELATION_INDEX_DECLARATION(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */

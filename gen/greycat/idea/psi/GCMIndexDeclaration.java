@@ -11,6 +11,12 @@ public interface GCMIndexDeclaration extends PsiElement {
   List<GCMAttributeName> getAttributeNameList();
 
   @Nullable
+  GCMIndexedWithoutTimeDeclaration getIndexedWithoutTimeDeclaration();
+
+  @Nullable
+  GCMIndexedWithTimeDeclaration getIndexedWithTimeDeclaration();
+
+  @Nullable
   GCMIndexNameDeclaration getIndexNameDeclaration();
 
 }

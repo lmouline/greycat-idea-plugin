@@ -11,7 +11,9 @@ public interface GCMTypeDeclaration extends GCMNamedElement {
   @NotNull
   PsiElement getIdent();
 
-  PsiElement setName(String newName);
+  //WARNING: setNameIdentifier(...) is skipped
+  //matching setNameIdentifier(GCMTypeDeclaration, ...)
+  //methods are not found in GCMUtil
 
   @Nullable
   PsiElement getNameIdentifier();

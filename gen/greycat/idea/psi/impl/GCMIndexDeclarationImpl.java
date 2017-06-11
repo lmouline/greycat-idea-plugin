@@ -35,6 +35,18 @@ public class GCMIndexDeclarationImpl extends ASTWrapperPsiElement implements GCM
 
   @Override
   @Nullable
+  public GCMIndexedWithoutTimeDeclaration getIndexedWithoutTimeDeclaration() {
+    return findChildByClass(GCMIndexedWithoutTimeDeclaration.class);
+  }
+
+  @Override
+  @Nullable
+  public GCMIndexedWithTimeDeclaration getIndexedWithTimeDeclaration() {
+    return findChildByClass(GCMIndexedWithTimeDeclaration.class);
+  }
+
+  @Override
+  @Nullable
   public GCMIndexNameDeclaration getIndexNameDeclaration() {
     return findChildByClass(GCMIndexNameDeclaration.class);
   }

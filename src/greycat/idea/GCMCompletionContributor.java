@@ -15,6 +15,8 @@ public class GCMCompletionContributor extends CompletionContributor {
         resultSet.addElement(LookupElementBuilder.create("att "));
         resultSet.addElement(LookupElementBuilder.create("rel "));
         resultSet.addElement(LookupElementBuilder.create("ref "));
+        resultSet.addElement(LookupElementBuilder.create("indexed by "));
+        resultSet.addElement(LookupElementBuilder.create("indexed with time by "));
     }
 
     public GCMCompletionContributor() {
@@ -76,6 +78,9 @@ public class GCMCompletionContributor extends CompletionContributor {
                                     });
                                     resultSet.stopHere();
                                 }
+                            } else if (parameters.getPosition().getParent().getParent() instanceof GCMIndexedWithoutTimeDeclaration) {
+                                //add all know types
+
                             }
                         }
                     }
