@@ -35,8 +35,8 @@ public class GCMClassElemDeclarationImpl extends ASTWrapperPsiElement implements
 
   @Override
   @Nullable
-  public GCMIndexDeclaration getIndexDeclaration() {
-    return findChildByClass(GCMIndexDeclaration.class);
+  public GCMKeyDeclaration getKeyDeclaration() {
+    return findChildByClass(GCMKeyDeclaration.class);
   }
 
   @Override

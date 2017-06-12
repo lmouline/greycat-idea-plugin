@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMIndexDeclarationImpl extends ASTWrapperPsiElement implements GCMIndexDeclaration {
+public class GCMKeyDeclarationImpl extends ASTWrapperPsiElement implements GCMKeyDeclaration {
 
-  public GCMIndexDeclarationImpl(ASTNode node) {
+  public GCMKeyDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitIndexDeclaration(this);
+    visitor.visitKeyDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -35,20 +35,20 @@ public class GCMIndexDeclarationImpl extends ASTWrapperPsiElement implements GCM
 
   @Override
   @Nullable
-  public GCMIndexedWithoutTimeDeclaration getIndexedWithoutTimeDeclaration() {
-    return findChildByClass(GCMIndexedWithoutTimeDeclaration.class);
+  public GCMKeyNameDeclaration getKeyNameDeclaration() {
+    return findChildByClass(GCMKeyNameDeclaration.class);
   }
 
   @Override
   @Nullable
-  public GCMIndexedWithTimeDeclaration getIndexedWithTimeDeclaration() {
-    return findChildByClass(GCMIndexedWithTimeDeclaration.class);
+  public GCMKeyWithoutTimeDeclaration getKeyWithoutTimeDeclaration() {
+    return findChildByClass(GCMKeyWithoutTimeDeclaration.class);
   }
 
   @Override
   @Nullable
-  public GCMIndexNameDeclaration getIndexNameDeclaration() {
-    return findChildByClass(GCMIndexNameDeclaration.class);
+  public GCMKeyWithTimeDeclaration getKeyWithTimeDeclaration() {
+    return findChildByClass(GCMKeyWithTimeDeclaration.class);
   }
 
 }

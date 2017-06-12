@@ -11,7 +11,7 @@ public interface GCMClassElemDeclaration extends PsiElement {
   GCMAttributeDeclaration getAttributeDeclaration();
 
   @Nullable
-  GCMIndexDeclaration getIndexDeclaration();
+  GCMKeyDeclaration getKeyDeclaration();
 
   @Nullable
   GCMRelationDeclaration getRelationDeclaration();

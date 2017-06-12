@@ -36,19 +36,19 @@ public class GCMVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
-  public void visitIndexedWithoutTimeDeclaration(@NotNull GCMIndexedWithoutTimeDeclaration o) {
+  public void visitKeyDeclaration(@NotNull GCMKeyDeclaration o) {
     visitPsiElement(o);
   }
 
-  public void visitIndexedWithTimeDeclaration(@NotNull GCMIndexedWithTimeDeclaration o) {
+  public void visitKeyNameDeclaration(@NotNull GCMKeyNameDeclaration o) {
     visitPsiElement(o);
   }
 
-  public void visitIndexDeclaration(@NotNull GCMIndexDeclaration o) {
+  public void visitKeyWithoutTimeDeclaration(@NotNull GCMKeyWithoutTimeDeclaration o) {
     visitPsiElement(o);
   }
 
-  public void visitIndexNameDeclaration(@NotNull GCMIndexNameDeclaration o) {
+  public void visitKeyWithTimeDeclaration(@NotNull GCMKeyWithTimeDeclaration o) {
     visitPsiElement(o);
   }
 

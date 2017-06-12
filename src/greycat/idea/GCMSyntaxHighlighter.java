@@ -66,10 +66,10 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
         if (tokenType.equals(GCMTypes.EXTENDS)) {
             return KEYWORD_KEYS;
         }
-        if (tokenType.equals(GCMTypes.INDEXED_BY)) {
+        if (tokenType.equals(GCMTypes.KEY)) {
             return KEYWORD_KEYS;
         }
-        if (tokenType.equals(GCMTypes.INDEXED_WITH_TIME_BY)) {
+        if (tokenType.equals(GCMTypes.KEY_WITH_TIME)) {
             return KEYWORD_KEYS;
         }
         if (tokenType.equals(GCMTypes.INDEXED_BY)) {

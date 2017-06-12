@@ -4,7 +4,7 @@
 - An **attribute** is declared as: `name : type` with type in {String, Long, Integer, Boolean, Double, *[]}
 - A **relation** is declared as: `rel name : type` and optional an index, `name : type indexed by attribute1,attribute2,...`
 - A **reference** is declared as `ref name : type`.
-- A global **index** can be defined as `indexed by attribute1,attribute2,... as IndexName` (index is valid from beginning of time) or `indexed with time by attribute1,attribute2,... IndexName` (index is temporal).
+- A **key** can be defined as `key attribute1,attribute2,... as MyPrimaryKey` (key is valid from beginning of time) or `key with time attribute1,attribute2,... KeyName` (key is temporal).
 
 
 ```
@@ -14,8 +14,8 @@ class Device {
     rel modules : Module indexed by name,name2
     ref button : Button
 
-    indexed with time by name,identifier as MyIndex
-    indexed by name as MyIndex2
+    key with time name,identifier as MyPrimaryKey
+    key name as MySecondaryKey
 
 }
 

@@ -15,8 +15,8 @@ public class GCMCompletionContributor extends CompletionContributor {
         resultSet.addElement(LookupElementBuilder.create("att "));
         resultSet.addElement(LookupElementBuilder.create("rel "));
         resultSet.addElement(LookupElementBuilder.create("ref "));
-        resultSet.addElement(LookupElementBuilder.create("indexed by "));
-        resultSet.addElement(LookupElementBuilder.create("indexed with time by "));
+        resultSet.addElement(LookupElementBuilder.create("key "));
+        resultSet.addElement(LookupElementBuilder.create("key with time "));
     }
 
     public GCMCompletionContributor() {
@@ -78,9 +78,6 @@ public class GCMCompletionContributor extends CompletionContributor {
                                     });
                                     resultSet.stopHere();
                                 }
-                            } else if (parameters.getPosition().getParent().getParent() instanceof GCMIndexedWithoutTimeDeclaration) {
-                                //add all know types
-
                             }
                         }
                     }
@@ -143,6 +140,46 @@ public class GCMCompletionContributor extends CompletionContributor {
                                 resultSet.stopHere();
                             }
                         }
+                    }
+                }
+        );
+
+        extend(CompletionType.BASIC,
+                PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.KEY)),
+                new CompletionProvider<CompletionParameters>() {
+                    @Override
+                    protected void addCompletions(@NotNull CompletionParameters completionParameters,
+                                                  ProcessingContext processingContext,
+                                                  @NotNull CompletionResultSet completionResultSet) {
+
+                        GCMClassDeclaration classDeclaration = (GCMClassDeclaration) completionParameters.getPosition().getParent().getParent().getParent().getParent();
+                        for (GCMClassElemDeclaration dcl : classDeclaration.getClassElemDeclarationList()) {
+                            if(dcl.getAttributeDeclaration() != null) {
+                                String att = dcl.getAttributeDeclaration().getAttributeName().getText();
+                                completionResultSet.addElement(LookupElementBuilder.create(att));
+                            }
+                        }
+                        completionResultSet.stopHere();
+                    }
+                }
+        );
+
+        extend(CompletionType.BASIC,
+                PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.KEY_WITH_TIME)),
+                new CompletionProvider<CompletionParameters>() {
+                    @Override
+                    protected void addCompletions(@NotNull CompletionParameters completionParameters,
+                                                  ProcessingContext processingContext,
+                                                  @NotNull CompletionResultSet completionResultSet) {
+
+                        GCMClassDeclaration classDeclaration = (GCMClassDeclaration) completionParameters.getPosition().getParent().getParent().getParent().getParent();
+                        for (GCMClassElemDeclaration dcl : classDeclaration.getClassElemDeclarationList()) {
+                            if(dcl.getAttributeDeclaration() != null) {
+                                String att = dcl.getAttributeDeclaration().getAttributeName().getText();
+                                completionResultSet.addElement(LookupElementBuilder.create(att));
+                            }
+                        }
+                        completionResultSet.stopHere();
                     }
                 }
         );

@@ -44,17 +44,17 @@ public class GCMParser implements PsiParser, LightPsiParser {
     else if (t == ENUM_ELEM_DECLARATION) {
       r = ENUM_ELEM_DECLARATION(b, 0);
     }
-    else if (t == INDEXED_WITHOUT_TIME_DECLARATION) {
-      r = INDEXED_WITHOUT_TIME_DECLARATION(b, 0);
+    else if (t == KEY_DECLARATION) {
+      r = KEY_DECLARATION(b, 0);
     }
-    else if (t == INDEXED_WITH_TIME_DECLARATION) {
-      r = INDEXED_WITH_TIME_DECLARATION(b, 0);
+    else if (t == KEY_NAME_DECLARATION) {
+      r = KEY_NAME_DECLARATION(b, 0);
     }
-    else if (t == INDEX_DECLARATION) {
-      r = INDEX_DECLARATION(b, 0);
+    else if (t == KEY_WITHOUT_TIME_DECLARATION) {
+      r = KEY_WITHOUT_TIME_DECLARATION(b, 0);
     }
-    else if (t == INDEX_NAME_DECLARATION) {
-      r = INDEX_NAME_DECLARATION(b, 0);
+    else if (t == KEY_WITH_TIME_DECLARATION) {
+      r = KEY_WITH_TIME_DECLARATION(b, 0);
     }
     else if (t == PARENTS_DECLARATION) {
       r = PARENTS_DECLARATION(b, 0);
@@ -151,14 +151,14 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ATTRIBUTE_DECLARATION | RELATION_DECLARATION | INDEX_DECLARATION
+  // ATTRIBUTE_DECLARATION | RELATION_DECLARATION | KEY_DECLARATION
   public static boolean CLASS_ELEM_DECLARATION(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "CLASS_ELEM_DECLARATION")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, CLASS_ELEM_DECLARATION, "<class elem declaration>");
     r = ATTRIBUTE_DECLARATION(b, l + 1);
     if (!r) r = RELATION_DECLARATION(b, l + 1);
-    if (!r) r = INDEX_DECLARATION(b, l + 1);
+    if (!r) r = KEY_DECLARATION(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -244,70 +244,46 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // INDEXED_BY
-  public static boolean INDEXED_WITHOUT_TIME_DECLARATION(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEXED_WITHOUT_TIME_DECLARATION")) return false;
-    if (!nextTokenIs(b, INDEXED_BY)) return false;
+  // (KEY_WITH_TIME_DECLARATION | KEY_WITHOUT_TIME_DECLARATION) ATTRIBUTE_NAME (COMMA ATTRIBUTE_NAME)* (AS KEY_NAME_DECLARATION)?
+  public static boolean KEY_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION")) return false;
+    if (!nextTokenIs(b, "<key declaration>", KEY, KEY_WITH_TIME)) return false;
     boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, INDEXED_BY);
-    exit_section_(b, m, INDEXED_WITHOUT_TIME_DECLARATION, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // INDEXED_WITH_TIME_BY
-  public static boolean INDEXED_WITH_TIME_DECLARATION(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEXED_WITH_TIME_DECLARATION")) return false;
-    if (!nextTokenIs(b, INDEXED_WITH_TIME_BY)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, INDEXED_WITH_TIME_BY);
-    exit_section_(b, m, INDEXED_WITH_TIME_DECLARATION, r);
-    return r;
-  }
-
-  /* ********************************************************** */
-  // (INDEXED_WITH_TIME_DECLARATION | INDEXED_WITHOUT_TIME_DECLARATION) ATTRIBUTE_NAME (COMMA ATTRIBUTE_NAME)* (AS INDEX_NAME_DECLARATION)?
-  public static boolean INDEX_DECLARATION(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION")) return false;
-    if (!nextTokenIs(b, "<index declaration>", INDEXED_BY, INDEXED_WITH_TIME_BY)) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NONE_, INDEX_DECLARATION, "<index declaration>");
-    r = INDEX_DECLARATION_0(b, l + 1);
+    Marker m = enter_section_(b, l, _NONE_, KEY_DECLARATION, "<key declaration>");
+    r = KEY_DECLARATION_0(b, l + 1);
     r = r && ATTRIBUTE_NAME(b, l + 1);
-    r = r && INDEX_DECLARATION_2(b, l + 1);
-    r = r && INDEX_DECLARATION_3(b, l + 1);
+    r = r && KEY_DECLARATION_2(b, l + 1);
+    r = r && KEY_DECLARATION_3(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
-  // INDEXED_WITH_TIME_DECLARATION | INDEXED_WITHOUT_TIME_DECLARATION
-  private static boolean INDEX_DECLARATION_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_0")) return false;
+  // KEY_WITH_TIME_DECLARATION | KEY_WITHOUT_TIME_DECLARATION
+  private static boolean KEY_DECLARATION_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = INDEXED_WITH_TIME_DECLARATION(b, l + 1);
-    if (!r) r = INDEXED_WITHOUT_TIME_DECLARATION(b, l + 1);
+    r = KEY_WITH_TIME_DECLARATION(b, l + 1);
+    if (!r) r = KEY_WITHOUT_TIME_DECLARATION(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // (COMMA ATTRIBUTE_NAME)*
-  private static boolean INDEX_DECLARATION_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_2")) return false;
+  private static boolean KEY_DECLARATION_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION_2")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!INDEX_DECLARATION_2_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "INDEX_DECLARATION_2", c)) break;
+      if (!KEY_DECLARATION_2_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "KEY_DECLARATION_2", c)) break;
       c = current_position_(b);
     }
     return true;
   }
 
   // COMMA ATTRIBUTE_NAME
-  private static boolean INDEX_DECLARATION_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_2_0")) return false;
+  private static boolean KEY_DECLARATION_2_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION_2_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, COMMA);
@@ -316,33 +292,57 @@ public class GCMParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // (AS INDEX_NAME_DECLARATION)?
-  private static boolean INDEX_DECLARATION_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_3")) return false;
-    INDEX_DECLARATION_3_0(b, l + 1);
+  // (AS KEY_NAME_DECLARATION)?
+  private static boolean KEY_DECLARATION_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION_3")) return false;
+    KEY_DECLARATION_3_0(b, l + 1);
     return true;
   }
 
-  // AS INDEX_NAME_DECLARATION
-  private static boolean INDEX_DECLARATION_3_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_DECLARATION_3_0")) return false;
+  // AS KEY_NAME_DECLARATION
+  private static boolean KEY_DECLARATION_3_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_DECLARATION_3_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, AS);
-    r = r && INDEX_NAME_DECLARATION(b, l + 1);
+    r = r && KEY_NAME_DECLARATION(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   /* ********************************************************** */
   // IDENT
-  public static boolean INDEX_NAME_DECLARATION(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "INDEX_NAME_DECLARATION")) return false;
+  public static boolean KEY_NAME_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_NAME_DECLARATION")) return false;
     if (!nextTokenIs(b, IDENT)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, IDENT);
-    exit_section_(b, m, INDEX_NAME_DECLARATION, r);
+    exit_section_(b, m, KEY_NAME_DECLARATION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // KEY
+  public static boolean KEY_WITHOUT_TIME_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_WITHOUT_TIME_DECLARATION")) return false;
+    if (!nextTokenIs(b, KEY)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, KEY);
+    exit_section_(b, m, KEY_WITHOUT_TIME_DECLARATION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // KEY_WITH_TIME
+  public static boolean KEY_WITH_TIME_DECLARATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "KEY_WITH_TIME_DECLARATION")) return false;
+    if (!nextTokenIs(b, KEY_WITH_TIME)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, KEY_WITH_TIME);
+    exit_section_(b, m, KEY_WITH_TIME_DECLARATION, r);
     return r;
   }
 

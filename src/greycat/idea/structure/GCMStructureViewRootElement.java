@@ -73,8 +73,8 @@ public class GCMStructureViewRootElement implements StructureViewTreeElement {
                     }
 
                     @Override
-                    public void visitIndexDeclaration(@NotNull GCMIndexDeclaration o) {
-                        super.visitIndexDeclaration(o);
+                    public void visitKeyDeclaration(@NotNull GCMKeyDeclaration o) {
+                        super.visitKeyDeclaration(o);
                         /*
                         GCMStructureViewIndexElement indexElement = new GCMStructureViewIndexElement(o, editor);
                         processIndexValues(o, indexElement, editor);

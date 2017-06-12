@@ -12,19 +12,25 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMIndexedWithTimeDeclarationImpl extends ASTWrapperPsiElement implements GCMIndexedWithTimeDeclaration {
+public class GCMKeyNameDeclarationImpl extends ASTWrapperPsiElement implements GCMKeyNameDeclaration {
 
-  public GCMIndexedWithTimeDeclarationImpl(ASTNode node) {
+  public GCMKeyNameDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitIndexedWithTimeDeclaration(this);
+    visitor.visitKeyNameDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof GCMVisitor) accept((GCMVisitor)visitor);
     else super.accept(visitor);
+  }
+
+  @Override
+  @NotNull
+  public PsiElement getIdent() {
+    return findNotNullChildByType(IDENT);
   }
 
 }

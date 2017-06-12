@@ -32,33 +32,34 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
 
 %%
 <YYINITIAL> {
-  {WHITE_SPACE}               { return WHITE_SPACE; }
+  {WHITE_SPACE}        { return WHITE_SPACE; }
 
-  "indexed with time by"      { return INDEXED_WITH_TIME_BY; }
-  "indexed by"                { return INDEXED_BY; }
-  "as"                        { return AS; }
-  "class"                     { return CLASS; }
-  "enum"                      { return ENUM; }
-  "att"                       { return ATT; }
-  "[]"                        { return ARRAY; }
-  "ref"                       { return REF; }
-  "rel"                       { return REL; }
-  "extends"                   { return EXTENDS; }
-  ","                         { return COMMA; }
-  ":"                         { return COLON; }
-  "{"                         { return BODY_OPEN; }
-  "}"                         { return BODY_CLOSE; }
-  "("                         { return ANNOT_PARAM_OPEN; }
-  ")"                         { return ANNOT_PARAM_CLOSE; }
-  "."                         { return MULT_SEP; }
-  "<<EOF>>"                   { return EOF; }
-  "newline"                   { return NEWLINE; }
-  "CRLF"                      { return CRLF; }
+  "key with time"      { return KEY_WITH_TIME; }
+  "key"                { return KEY; }
+  "as"                 { return AS; }
+  "class"              { return CLASS; }
+  "enum"               { return ENUM; }
+  "att"                { return ATT; }
+  "[]"                 { return ARRAY; }
+  "ref"                { return REF; }
+  "rel"                { return REL; }
+  "extends"            { return EXTENDS; }
+  ","                  { return COMMA; }
+  ":"                  { return COLON; }
+  "{"                  { return BODY_OPEN; }
+  "}"                  { return BODY_CLOSE; }
+  "("                  { return ANNOT_PARAM_OPEN; }
+  ")"                  { return ANNOT_PARAM_CLOSE; }
+  "."                  { return MULT_SEP; }
+  "<<EOF>>"            { return EOF; }
+  "newline"            { return NEWLINE; }
+  "CRLF"               { return CRLF; }
+  "INDEXED_BY"         { return INDEXED_BY; }
 
-  {COMMENT}                   { return COMMENT; }
-  {NUMBER}                    { return NUMBER; }
-  {IDENT}                     { return IDENT; }
-  {STRING}                    { return STRING; }
+  {COMMENT}            { return COMMENT; }
+  {NUMBER}             { return NUMBER; }
+  {IDENT}              { return IDENT; }
+  {STRING}             { return STRING; }
 
 }
 
