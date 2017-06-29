@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.datathings.greycat.idea</id>
     <name>GreyCat IDEA</name>
-    <version>1.0</version>
+    <version>2.0</version>
     <vendor email="contact@datathings.com" url="http://www.datathings.com">DataThings</vendor>
     <description><![CDATA[
       This plugin aims at ease the edition of GreyCat Model, later use to generate a typing layer for the GreyCat framework.<br>
