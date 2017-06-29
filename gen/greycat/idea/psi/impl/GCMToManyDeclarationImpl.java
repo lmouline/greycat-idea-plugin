@@ -28,12 +28,15 @@ public class GCMToManyDeclarationImpl extends ASTWrapperPsiElement implements GC
   }
 
   @Override
+<<<<<<< 50e0da97b4bfe492c7595f1363ff378d9028067a
   @Nullable
   public GCMRelationIndexDeclaration getRelationIndexDeclaration() {
     return findChildByClass(GCMRelationIndexDeclaration.class);
   }
 
   @Override
+=======
+>>>>>>> 44ffb72f7837a15c79487ff6d0cc87870a9bc0d5
   @NotNull
   public GCMRelationName getRelationName() {
     return findNotNullChildByClass(GCMRelationName.class);

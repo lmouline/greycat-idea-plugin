@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMAttributeDeclarationImpl extends ASTWrapperPsiElement implements GCMAttributeDeclaration {
+public class GCMIndexDeclarationImpl extends ASTWrapperPsiElement implements GCMIndexDeclaration {
 
-  public GCMAttributeDeclarationImpl(ASTNode node) {
+  public GCMIndexDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitAttributeDeclaration(this);
+    visitor.visitIndexDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -28,24 +28,21 @@ public class GCMAttributeDeclarationImpl extends ASTWrapperPsiElement implements
   }
 
   @Override
-<<<<<<< 50e0da97b4bfe492c7595f1363ff378d9028067a
-=======
-  @Nullable
-  public GCMAttributeDefault getAttributeDefault() {
-    return findChildByClass(GCMAttributeDefault.class);
-  }
-
-  @Override
->>>>>>> 44ffb72f7837a15c79487ff6d0cc87870a9bc0d5
   @NotNull
-  public GCMAttributeName getAttributeName() {
-    return findNotNullChildByClass(GCMAttributeName.class);
+  public GCMIndexParams getIndexParams() {
+    return findNotNullChildByClass(GCMIndexParams.class);
   }
 
   @Override
   @NotNull
   public GCMTypeDeclaration getTypeDeclaration() {
     return findNotNullChildByClass(GCMTypeDeclaration.class);
+  }
+
+  @Override
+  @NotNull
+  public PsiElement getIdent() {
+    return findNotNullChildByType(IDENT);
   }
 
 }

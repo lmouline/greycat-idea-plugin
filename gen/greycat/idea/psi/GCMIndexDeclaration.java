@@ -8,6 +8,7 @@ import com.intellij.psi.PsiElement;
 public interface GCMIndexDeclaration extends PsiElement {
 
   @NotNull
+<<<<<<< 50e0da97b4bfe492c7595f1363ff378d9028067a
   List<GCMAttributeName> getAttributeNameList();
 
   @Nullable
@@ -18,5 +19,14 @@ public interface GCMIndexDeclaration extends PsiElement {
 
   @Nullable
   GCMIndexNameDeclaration getIndexNameDeclaration();
+=======
+  GCMIndexParams getIndexParams();
+
+  @NotNull
+  GCMTypeDeclaration getTypeDeclaration();
+
+  @NotNull
+  PsiElement getIdent();
+>>>>>>> 44ffb72f7837a15c79487ff6d0cc87870a9bc0d5
 
 }

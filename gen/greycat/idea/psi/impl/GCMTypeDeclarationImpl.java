@@ -33,6 +33,13 @@ public class GCMTypeDeclarationImpl extends GCMNamedElementImpl implements GCMTy
     return findNotNullChildByType(IDENT);
   }
 
+<<<<<<< 50e0da97b4bfe492c7595f1363ff378d9028067a
+=======
+  public PsiElement setName(String newName) {
+    return GCMUtil.setName(this, newName);
+  }
+
+>>>>>>> 44ffb72f7837a15c79487ff6d0cc87870a9bc0d5
   public PsiElement getNameIdentifier() {
     return GCMUtil.getNameIdentifier(this);
   }
