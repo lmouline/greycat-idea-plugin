@@ -5,9 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface GCMIndexNameDeclaration extends PsiElement {
-
-  @NotNull
-  PsiElement getIdent();
+public interface GCMImportDeclaration extends PsiElement {
 
 }

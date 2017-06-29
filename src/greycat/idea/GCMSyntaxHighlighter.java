@@ -13,8 +13,11 @@ import greycat.idea.psi.GCMTypes;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;
+import static greycat.idea.psi.GCMTypes.*;
 
 public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
 
@@ -38,6 +41,9 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
     private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
     private static final TextAttributesKey[] SEPARATOR_KEYS = new TextAttributesKey[]{SEPARATOR};
 
+    private static final HashSet<IElementType> KEYWORD_SET = new HashSet<IElementType>(Arrays.asList(CONST, CLASS, INDEX, TYPE, USING, IMPORT, ATT, REL, REF, EXTENDS));
+    private static final HashSet<IElementType> SEPARATOR_SET = new HashSet<IElementType>(Arrays.asList(COLON, COMMA, BODY_OPEN, BODY_CLOSE, POINT, POPEN, PCLOSE, EQUALS));
+
     @NotNull
     @Override
     public Lexer getHighlightingLexer() {
@@ -46,58 +52,12 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
 
     @NotNull
     @Override
-    public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
+    public final TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
         /* Entities OPERATIONS */
-        if (tokenType.equals(GCMTypes.CLASS)) {
+        if (KEYWORD_SET.contains(tokenType)) {
             return KEYWORD_KEYS;
         }
-        if (tokenType.equals(GCMTypes.ENUM)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.ATT)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.REL)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.REF)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.EXTENDS)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.KEY)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.KEY_WITH_TIME)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.INDEXED_BY)) {
-            return KEYWORD_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.AS)) {
-            return KEYWORD_KEYS;
-        }
-        /* Separator */
-        if (tokenType.equals(GCMTypes.COLON)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.COMMA)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.BODY_OPEN)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.BODY_CLOSE)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.MULT_SEP)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.ANNOT_PARAM_OPEN)) {
-            return SEPARATOR_KEYS;
-        }
-        if (tokenType.equals(GCMTypes.ANNOT_PARAM_CLOSE)) {
+        if (SEPARATOR_SET.contains(tokenType)) {
             return SEPARATOR_KEYS;
         }
         /* Basic elem */
@@ -107,7 +67,7 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
         if (tokenType.equals(GCMTypes.NUMBER)) {
             return NUMBER_KEYS;
         }
-        if (tokenType.equals(GCMTypes.COMMENT)) {
+        if (tokenType.equals(GCMTypes.LINE_COMMENT) | tokenType.equals(GCMTypes.BLOCK_COMMENT)) {
             return COMMENT_KEYS;
         }
         if (tokenType.equals(GCMTypes.STRING)) {

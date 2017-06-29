@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMEnumDeclarationImpl extends ASTWrapperPsiElement implements GCMEnumDeclaration {
+public class GCMCustomTypeDeclarationImpl extends ASTWrapperPsiElement implements GCMCustomTypeDeclaration {
 
-  public GCMEnumDeclarationImpl(ASTNode node) {
+  public GCMCustomTypeDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitEnumDeclaration(this);
+    visitor.visitCustomTypeDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -29,14 +29,14 @@ public class GCMEnumDeclarationImpl extends ASTWrapperPsiElement implements GCME
 
   @Override
   @NotNull
-  public List<GCMEnumElemDeclaration> getEnumElemDeclarationList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, GCMEnumElemDeclaration.class);
+  public List<GCMProp> getPropList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, GCMProp.class);
   }
 
   @Override
   @NotNull
-  public GCMTypeDeclaration getTypeDeclaration() {
-    return findNotNullChildByClass(GCMTypeDeclaration.class);
+  public PsiElement getIdent() {
+    return findNotNullChildByType(IDENT);
   }
 
 }

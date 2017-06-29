@@ -5,12 +5,6 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface GCMEnumDeclaration extends PsiElement {
-
-  @NotNull
-  List<GCMEnumElemDeclaration> getEnumElemDeclarationList();
-
-  @NotNull
-  GCMTypeDeclaration getTypeDeclaration();
+public interface GCMNtupleValue extends PsiElement {
 
 }

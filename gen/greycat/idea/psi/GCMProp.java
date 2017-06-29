@@ -5,7 +5,7 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface GCMClassElemDeclaration extends PsiElement {
+public interface GCMProp extends PsiElement {
 
   @Nullable
   GCMAttributeDeclaration getAttributeDeclaration();
@@ -15,5 +15,8 @@ public interface GCMClassElemDeclaration extends PsiElement {
 
   @Nullable
   GCMRelationDeclaration getRelationDeclaration();
+
+  @Nullable
+  GCMSubConstDeclaration getSubConstDeclaration();
 
 }

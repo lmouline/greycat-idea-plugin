@@ -25,38 +25,40 @@ import static greycat.idea.psi.GCMTypes.*;
 EOL=\R
 WHITE_SPACE=\s+
 
-COMMENT="//".*
+LINE_COMMENT="//".*
+BLOCK_COMMENT="/"\*([^]|\n)*\*"/"
 NUMBER=[\-]?[0-9]+[.]?[0-9]*
-IDENT=[\*\.a-zA-Z0-9_\-]+
+IDENT=[a-zA-Z_][a-zA-Z_0-9]*
 STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
 
 %%
 <YYINITIAL> {
   {WHITE_SPACE}        { return WHITE_SPACE; }
 
-  "key with time"      { return KEY_WITH_TIME; }
-  "key"                { return KEY; }
-  "as"                 { return AS; }
+  "const"              { return CONST; }
+  "type"               { return TYPE; }
+  "using"              { return USING; }
+  "index"              { return INDEX; }
   "class"              { return CLASS; }
-  "enum"               { return ENUM; }
   "att"                { return ATT; }
-  "[]"                 { return ARRAY; }
+  "="                  { return EQUALS; }
   "ref"                { return REF; }
   "rel"                { return REL; }
+  "import"             { return IMPORT; }
   "extends"            { return EXTENDS; }
   ","                  { return COMMA; }
   ":"                  { return COLON; }
   "{"                  { return BODY_OPEN; }
   "}"                  { return BODY_CLOSE; }
-  "("                  { return ANNOT_PARAM_OPEN; }
-  ")"                  { return ANNOT_PARAM_CLOSE; }
-  "."                  { return MULT_SEP; }
+  "("                  { return POPEN; }
+  ")"                  { return PCLOSE; }
+  "."                  { return POINT; }
   "<<EOF>>"            { return EOF; }
   "newline"            { return NEWLINE; }
   "CRLF"               { return CRLF; }
-  "INDEXED_BY"         { return INDEXED_BY; }
 
-  {COMMENT}            { return COMMENT; }
+  {LINE_COMMENT}       { return LINE_COMMENT; }
+  {BLOCK_COMMENT}      { return BLOCK_COMMENT; }
   {NUMBER}             { return NUMBER; }
   {IDENT}              { return IDENT; }
   {STRING}             { return STRING; }

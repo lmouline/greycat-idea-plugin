@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMEnumElemDeclarationImpl extends ASTWrapperPsiElement implements GCMEnumElemDeclaration {
+public class GCMPropImpl extends ASTWrapperPsiElement implements GCMProp {
 
-  public GCMEnumElemDeclarationImpl(ASTNode node) {
+  public GCMPropImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitEnumElemDeclaration(this);
+    visitor.visitProp(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -28,9 +28,27 @@ public class GCMEnumElemDeclarationImpl extends ASTWrapperPsiElement implements 
   }
 
   @Override
-  @NotNull
-  public PsiElement getIdent() {
-    return findNotNullChildByType(IDENT);
+  @Nullable
+  public GCMAttributeDeclaration getAttributeDeclaration() {
+    return findChildByClass(GCMAttributeDeclaration.class);
+  }
+
+  @Override
+  @Nullable
+  public GCMKeyDeclaration getKeyDeclaration() {
+    return findChildByClass(GCMKeyDeclaration.class);
+  }
+
+  @Override
+  @Nullable
+  public GCMRelationDeclaration getRelationDeclaration() {
+    return findChildByClass(GCMRelationDeclaration.class);
+  }
+
+  @Override
+  @Nullable
+  public GCMSubConstDeclaration getSubConstDeclaration() {
+    return findChildByClass(GCMSubConstDeclaration.class);
   }
 
 }

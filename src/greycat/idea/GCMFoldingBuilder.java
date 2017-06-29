@@ -23,14 +23,14 @@ public class GCMFoldingBuilder implements FoldingBuilder {
     }
 
     private void appendDescriptors(final ASTNode node, final Document document, final List<FoldingDescriptor> descriptors) {
-        if (node.getElementType() == GCMTypes.CLASS_DECLARATION || node.getElementType() == GCMTypes.ENUM_DECLARATION) {
+        if (node.getElementType() == GCMTypes.CLASS_DECLARATION || node.getElementType() == GCMTypes.CUSTOM_TYPE_DECLARATION) {
             TextRange fullRange = node.getTextRange();
             if (fullRange.getEndOffset() - fullRange.getStartOffset() > 0) {
 
                 try {
                     int startOffset = fullRange.getStartOffset() + document.getText(fullRange).indexOf("{") + 1;
                     int endOffset = fullRange.getEndOffset() - 1;
-                    if(startOffset < endOffset){
+                    if (startOffset < endOffset) {
                         TextRange shortRange = new TextRange(startOffset, fullRange.getEndOffset() - 1);
                         if (shortRange.getEndOffset() - shortRange.getStartOffset() > 1) {
                             descriptors.add(new FoldingDescriptor(node, shortRange));

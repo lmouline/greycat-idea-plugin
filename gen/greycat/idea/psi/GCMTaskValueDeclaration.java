@@ -5,9 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface GCMEnumElemDeclaration extends PsiElement {
+public interface GCMTaskValueDeclaration extends PsiElement {
 
   @NotNull
-  PsiElement getIdent();
+  List<GCMActionDeclaration> getActionDeclarationList();
 
 }

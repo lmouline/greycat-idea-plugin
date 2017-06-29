@@ -59,22 +59,8 @@ public class GCMStructureViewRootElement implements StructureViewTreeElement {
                     }
 
                     @Override
-                    public void visitEnumDeclaration(@NotNull GCMEnumDeclaration o) {
-                        super.visitEnumDeclaration(o);
-                        if (o.getTypeDeclaration() != null) {
-                            GCMStructureViewEnumElement enumElement = new GCMStructureViewEnumElement(o, editor);
-                            processEnumValues(o, enumElement, editor);
-                            if (o.getTypeDeclaration().getName().lastIndexOf(".") != -1) {
-                                processPackages(GCMStructureViewRootElement.this, o.getTypeDeclaration().getName()).innerClasses.add(enumElement);
-                            } else {
-                                GCMStructureViewRootElement.this.innerClasses.add(enumElement);
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void visitKeyDeclaration(@NotNull GCMKeyDeclaration o) {
-                        super.visitKeyDeclaration(o);
+                    public void visitIndexDeclaration(@NotNull GCMIndexDeclaration o) {
+                        super.visitIndexDeclaration(o);
                         /*
                         GCMStructureViewIndexElement indexElement = new GCMStructureViewIndexElement(o, editor);
                         processIndexValues(o, indexElement, editor);
@@ -179,6 +165,7 @@ public class GCMStructureViewRootElement implements StructureViewTreeElement {
     }
 
     private void processSubDec(GCMClassDeclaration o, GCMStructureViewClassElement classElement, Editor editor) {
+        /*
         for (GCMClassElemDeclaration relDec : o.getClassElemDeclarationList()) {
             if (relDec.getRelationDeclaration() != null) {
                 GCMStructureViewReferenceElement referenceElement = new GCMStructureViewReferenceElement(relDec.getRelationDeclaration(), editor);
@@ -190,6 +177,7 @@ public class GCMStructureViewRootElement implements StructureViewTreeElement {
                 System.err.println("Could not find appropriate ClassElem declaration type in processReference for Structure view");
             }
         }
+        */
 
 
     }
@@ -201,10 +189,11 @@ public class GCMStructureViewRootElement implements StructureViewTreeElement {
         }
     }*/
 
+/*
     private void processEnumValues(GCMEnumDeclaration o, GCMStructureViewEnumElement enumElement, Editor editor) {
         for (GCMEnumElemDeclaration enumValDec : o.getEnumElemDeclarationList()) {
             GCMStructureViewEnumElementElement enumValElement = new GCMStructureViewEnumElementElement(enumValDec, editor);
             enumElement.elements.add(enumValElement);
         }
-    }
+    }*/
 }

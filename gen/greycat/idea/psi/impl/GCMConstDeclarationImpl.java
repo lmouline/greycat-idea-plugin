@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMClassElemDeclarationImpl extends ASTWrapperPsiElement implements GCMClassElemDeclaration {
+public class GCMConstDeclarationImpl extends ASTWrapperPsiElement implements GCMConstDeclaration {
 
-  public GCMClassElemDeclarationImpl(ASTNode node) {
+  public GCMConstDeclarationImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitClassElemDeclaration(this);
+    visitor.visitConstDeclaration(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -29,20 +29,20 @@ public class GCMClassElemDeclarationImpl extends ASTWrapperPsiElement implements
 
   @Override
   @Nullable
-  public GCMAttributeDeclaration getAttributeDeclaration() {
-    return findChildByClass(GCMAttributeDeclaration.class);
+  public GCMConstValueDeclaration getConstValueDeclaration() {
+    return findChildByClass(GCMConstValueDeclaration.class);
   }
 
   @Override
-  @Nullable
-  public GCMKeyDeclaration getKeyDeclaration() {
-    return findChildByClass(GCMKeyDeclaration.class);
+  @NotNull
+  public GCMTypeDeclaration getTypeDeclaration() {
+    return findNotNullChildByClass(GCMTypeDeclaration.class);
   }
 
   @Override
-  @Nullable
-  public GCMRelationDeclaration getRelationDeclaration() {
-    return findChildByClass(GCMRelationDeclaration.class);
+  @NotNull
+  public PsiElement getIdent() {
+    return findNotNullChildByType(IDENT);
   }
 
 }

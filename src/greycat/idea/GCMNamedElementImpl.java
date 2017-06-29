@@ -26,7 +26,7 @@ public class GCMNamedElementImpl extends ASTWrapperPsiElement implements GCMName
     }
 
     @Override
-    public PsiElement setName(@NonNls @NotNull String s) throws IncorrectOperationException {
+    public PsiElement setName(@NonNls @NotNull String newName) throws IncorrectOperationException {
         return null;
     }
 

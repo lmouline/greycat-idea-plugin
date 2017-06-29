@@ -34,17 +34,19 @@ public class GCMCompletionContributor extends CompletionContributor {
                                     for (GCMPrimitiveTypes p : GCMPrimitiveTypes.values()) {
                                         resultSet.addElement(LookupElementBuilder.create(p.toString()));
                                     }
-                                    parameters.getOriginalFile().acceptChildren(new PsiElementVisitor() {
+                                    parameters.getOriginalFile().acceptChildren(new GCMVisitor() {
+
                                         @Override
-                                        public void visitElement(PsiElement element) {
-                                            if (element instanceof GCMDeclaration) {
-                                                GCMDeclaration declaration = (GCMDeclaration) element;
-                                                if (declaration.getEnumDeclaration() != null && declaration.getEnumDeclaration().getTypeDeclaration() != null) {
-                                                    resultSet.addElement(LookupElementBuilder.create(declaration.getEnumDeclaration().getTypeDeclaration()));
-                                                }
-                                            }
-                                            super.visitElement(element);
+                                        public void visitPsiElement(@NotNull PsiElement o) {
+                                            super.visitPsiElement(o);
+                                            o.acceptChildren(this);
                                         }
+
+                                        @Override
+                                        public void visitCustomTypeDeclaration(@NotNull GCMCustomTypeDeclaration o) {
+                                            resultSet.addElement(LookupElementBuilder.create(o.getIdent().getText()));
+                                        }
+
                                     });
                                     resultSet.stopHere();
                                 } else if (parameters.getPosition().getParent().getParent() instanceof GCMToManyDeclaration) {

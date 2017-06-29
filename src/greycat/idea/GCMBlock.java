@@ -25,9 +25,7 @@ public class GCMBlock extends AbstractBlock {
         ASTNode child = getNode().getFirstChildNode();
         while (child != null) {
             if (child.getElementType() != TokenType.WHITE_SPACE) {
-                if (child.getElementType() == GCMTypes.CLASS_ELEM_DECLARATION) {
-                    blocks.add(new GCMBlock(child, innerBodyAlignment, getWrap()));
-                } else if (child.getElementType() == GCMTypes.ENUM_ELEM_DECLARATION) {
+                if (child.getElementType() == GCMTypes.PROP) {
                     blocks.add(new GCMBlock(child, innerBodyAlignment, getWrap()));
                 } else {
                     blocks.add(new GCMBlock(child, getAlignment(), getWrap()));
@@ -40,10 +38,7 @@ public class GCMBlock extends AbstractBlock {
 
     @Override
     public Indent getIndent() {
-        if (getNode().getElementType() == GCMTypes.CLASS_ELEM_DECLARATION) {
-            return Indent.getNormalIndent();
-        }
-        if (getNode().getElementType() == GCMTypes.ENUM_ELEM_DECLARATION) {
+        if (getNode().getElementType() == GCMTypes.PROP) {
             return Indent.getNormalIndent();
         }
         return super.getIndent();
@@ -55,35 +50,54 @@ public class GCMBlock extends AbstractBlock {
         if (child1 != null) {
             IElementType type1 = ((AbstractBlock) child1).getNode().getElementType();
             IElementType type2 = ((AbstractBlock) child2).getNode().getElementType();
-            //comment management
+            if (type1 == GCMTypes.DECLARATION) {
+                return Spacing.createSpacing(1, 1, 2, false, 1);
+            }
+            if (type1 == GCMTypes.CLASS || type1 == GCMTypes.ATT || type1 == GCMTypes.REF || type1 == GCMTypes.REL || type1 == GCMTypes.INDEX || type1 == GCMTypes.TYPE || type1 == GCMTypes.CONST) {
+                return singleSpace();
+            }
+            if (type1 == GCMTypes.COLON || type2 == GCMTypes.COLON || type1 == GCMTypes.COMMA || type1 == GCMTypes.EQUALS || type2 == GCMTypes.EQUALS || type2 == GCMTypes.BODY_OPEN || type1 == GCMTypes.USING || type2 == GCMTypes.USING) {
+                return singleSpace();
+            }
+            if (type1 == GCMTypes.POPEN || type2 == GCMTypes.PCLOSE || type1 == GCMTypes.POINT || type2 == GCMTypes.POINT || type2 == GCMTypes.ACTION_PARAMS || type2 == GCMTypes.COMMA) {
+                return noSpace();
+            }
+
+
+            //attribute are always indented
+            /*
+            if (type2 == GCMTypes.PROP) {
+                if (type1 == GCMTypes.PROP) {
+                    return newLine();
+                } else {
+                    return Spacing.createSpacing(1, 1, 2, false, 1);
+                }
+            }*/
+
+            if (type1 == GCMTypes.TYPE_DECLARATION) {
+                if (type2 == GCMTypes.BODY_OPEN) {
+                    return singleSpace();
+                }
+            }
+
+
+            //default rules
             if (type1 == GCMTypes.BODY_OPEN) {
                 return newLine();
             }
             if (type2 == GCMTypes.BODY_CLOSE) {
                 return newLine();
             }
-            if (type1 == GCMTypes.DECLARATION) {
-                return Spacing.createSpacing(1, 1, 2, false, 1);
-            }
-            if (type1 == GCMTypes.CLASS_ELEM_DECLARATION && type2 == GCMTypes.CLASS_ELEM_DECLARATION) {
+
+            if (type1 == GCMTypes.PROP && type2 == GCMTypes.PROP) {
                 return newLine();
             }
-            if (type2 == GCMTypes.COLON) {
-                return noSpace();
+            //other rules
+            if (type1 == GCMTypes.LINE_COMMENT) {
+                return Spacing.createSpacing(1, 1, 2, false, 1);
+                //return newLine();
             }
-            if (type2 == GCMTypes.COMMA) {
-                return noSpace();
-            }
-            if (type2 == GCMTypes.ARRAY) {
-                return noSpace();
-            }
-            if (type1 == GCMTypes.ANNOT_PARAM_OPEN) {
-                return noSpace();
-            }
-            if (type2 == GCMTypes.ANNOT_PARAM_CLOSE) {
-                return noSpace();
-            }
-            if (type1 == GCMTypes.COMMENT) {
+            if (type1 == GCMTypes.BLOCK_COMMENT) {
                 return Spacing.createSpacing(1, 1, 2, false, 1);
                 //return newLine();
             }
@@ -249,7 +263,7 @@ public class GCMBlock extends AbstractBlock {
             if (type1 != MetaModelTypes.COMMENT || type2 == MetaModelTypes.COMMENT) {
                 return singleSpace();
             }*/
-            //System.out.println("Formatting Warning. Spacing unspecified between t1:" + type1 + " type2:" + type2);
+            System.out.println("Formatting Warning. Spacing unspecified between t1:" + type1 + " type2:" + type2);
         }
         return singleSpace();
     }

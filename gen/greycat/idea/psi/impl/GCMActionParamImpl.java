@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMRelationIndexDeclarationImpl extends ASTWrapperPsiElement implements GCMRelationIndexDeclaration {
+public class GCMActionParamImpl extends ASTWrapperPsiElement implements GCMActionParam {
 
-  public GCMRelationIndexDeclarationImpl(ASTNode node) {
+  public GCMActionParamImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitRelationIndexDeclaration(this);
+    visitor.visitActionParam(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -28,9 +28,15 @@ public class GCMRelationIndexDeclarationImpl extends ASTWrapperPsiElement implem
   }
 
   @Override
-  @NotNull
-  public List<GCMAttributeName> getAttributeNameList() {
-    return PsiTreeUtil.getChildrenOfTypeAsList(this, GCMAttributeName.class);
+  @Nullable
+  public GCMSubTask getSubTask() {
+    return findChildByClass(GCMSubTask.class);
+  }
+
+  @Override
+  @Nullable
+  public PsiElement getNumber() {
+    return findChildByType(NUMBER);
   }
 
 }

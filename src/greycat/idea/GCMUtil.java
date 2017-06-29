@@ -27,8 +27,6 @@ public class GCMUtil {
         for (VirtualFile virtualFile : virtualFiles) {
             GCMFile simpleFile = (GCMFile) PsiManager.getInstance(project).findFile(virtualFile);
             if (simpleFile != null) {
-
-
                 simpleFile.acceptChildren(new PsiElementVisitor() {
                     @Override
                     public void visitElement(PsiElement element) {
@@ -37,8 +35,8 @@ public class GCMUtil {
                             if (declaration.getClassDeclaration() != null) {
                                 result.add(declaration.getClassDeclaration().getTypeDeclaration());
                             }
-                            if (declaration.getEnumDeclaration() != null) {
-                                result.add(declaration.getEnumDeclaration().getTypeDeclaration());
+                            if (declaration.getCustomTypeDeclaration() != null) {
+                                //result.add(declaration.getCustomTypeDeclaration().getTypeDeclaration());
                             }
                         }
                         super.visitElement(element);
@@ -66,9 +64,9 @@ public class GCMUtil {
                                     result.add(declaration.getClassDeclaration().getTypeDeclaration());
                                 }
                             }
-                            if (declaration.getEnumDeclaration() != null && declaration.getEnumDeclaration().getTypeDeclaration() != null) {
-                                if (key.equals(declaration.getEnumDeclaration().getTypeDeclaration().getName())) {
-                                    result.add(declaration.getEnumDeclaration().getTypeDeclaration());
+                            if (declaration.getCustomTypeDeclaration() != null && declaration.getCustomTypeDeclaration().getIdent() != null) {
+                                if (key.equals(declaration.getCustomTypeDeclaration().getIdent())) {
+                                    //result.add(declaration.getCustomTypeDeclaration().getIdent().getText());
                                 }
                             }
                         }
