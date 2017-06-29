@@ -9,6 +9,7 @@
     ]]></description>
     <change-notes><![CDATA[
       1.0: initial version, supporting basic edition, new file wizzard, completion support...<br>
+      2.0: new version, compatible with GreyCat 9 preview
     ]]>
     </change-notes>
     <category>Custom Languages</category>
