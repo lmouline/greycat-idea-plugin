@@ -40,20 +40,20 @@ public class GCMNewFileAction extends CreateTemplateInPackageAction<PsiElement> 
         GCMTemplatesFactory.Template template = GCMTemplatesFactory.Template.GreyCatModel;
         String fileName = fileNameFromTypeName(typeName, parameterName);
         StringBuilder sample = new StringBuilder();
-        sample.append("class sample.Cloud {\n");
+        sample.append("class Cloud {\n");
         sample.append("    att name : String\n");
-        sample.append("    rel nodes : sample.Node\n");
+        sample.append("    rel nodes : Node\n");
         sample.append("}\n");
-        sample.append("class sample.Node {\n");
+        sample.append("class Node {\n");
         sample.append("    att name : String\n");
-        sample.append("    rel softwares : sample.Software\n");
-        sample.append("    rel indexedSoftware : sample.Software indexed by name\n");
+        sample.append("    rel softwares : Software\n");
+        sample.append("    index indexedSoftware : Software using name\n");
         sample.append("}\n");
-        sample.append("class sample.Software {\n");
+        sample.append("class Software {\n");
         sample.append("    att name : String\n");
         sample.append("    att size : Integer\n");
-        sample.append("    key name as MyPrimaryKey\n");
         sample.append("}\n");
+        sample.append("index softwares : Software using name\n");
         return GCMTemplatesFactory.createFromTemplate(psiDirectory, fileName, template, sample.toString());
     }
 

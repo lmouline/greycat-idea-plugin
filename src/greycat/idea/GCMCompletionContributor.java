@@ -146,6 +146,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                 }
         );
 
+        /*
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.KEY)),
                 new CompletionProvider<CompletionParameters>() {
@@ -184,7 +185,7 @@ public class GCMCompletionContributor extends CompletionContributor {
                         completionResultSet.stopHere();
                     }
                 }
-        );
+        );*/
 
         extend(CompletionType.BASIC,
                 PlatformPatterns.psiElement().withLanguage(GCMLanguage.INSTANCE).afterLeaf(PlatformPatterns.psiElement(GCMTypes.ATT)),
