@@ -51,4 +51,10 @@ public class GCMPropImpl extends ASTWrapperPsiElement implements GCMProp {
     return findChildByClass(GCMSubConstDeclaration.class);
   }
 
+  @Override
+  @Nullable
+  public PsiElement getIdent() {
+    return findChildByType(IDENT);
+  }
+
 }

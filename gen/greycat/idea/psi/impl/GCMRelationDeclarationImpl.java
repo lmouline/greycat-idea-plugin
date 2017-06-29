@@ -39,4 +39,10 @@ public class GCMRelationDeclarationImpl extends ASTWrapperPsiElement implements 
     return findChildByClass(GCMToOneDeclaration.class);
   }
 
+  @Override
+  @Nullable
+  public PsiElement getIdent() {
+    return findChildByType(IDENT);
+  }
+
 }

@@ -13,4 +13,7 @@ public interface GCMRelationDeclaration extends PsiElement {
   @Nullable
   GCMToOneDeclaration getToOneDeclaration();
 
+  @Nullable
+  PsiElement getIdent();
+
 }

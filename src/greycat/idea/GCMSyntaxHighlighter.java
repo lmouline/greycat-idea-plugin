@@ -41,7 +41,7 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
     private static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
     private static final TextAttributesKey[] SEPARATOR_KEYS = new TextAttributesKey[]{SEPARATOR};
 
-    private static final HashSet<IElementType> KEYWORD_SET = new HashSet<IElementType>(Arrays.asList(CONST, CLASS, INDEX, TYPE, USING, IMPORT, ATT, REL, REF, EXTENDS));
+    private static final HashSet<IElementType> KEYWORD_SET = new HashSet<IElementType>(Arrays.asList(CONST, CLASS, INDEX, TYPE, USING, IMPORT, ATT, REL, REF, EXTENDS, OPPOSITE_OF));
     private static final HashSet<IElementType> SEPARATOR_SET = new HashSet<IElementType>(Arrays.asList(COLON, COMMA, BODY_OPEN, BODY_CLOSE, POINT, POPEN, PCLOSE, EQUALS));
 
     @NotNull

@@ -19,4 +19,7 @@ public interface GCMProp extends PsiElement {
   @Nullable
   GCMSubConstDeclaration getSubConstDeclaration();
 
+  @Nullable
+  PsiElement getIdent();
+
 }

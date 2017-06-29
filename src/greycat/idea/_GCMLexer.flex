@@ -53,6 +53,7 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
   "("                  { return POPEN; }
   ")"                  { return PCLOSE; }
   "."                  { return POINT; }
+  "oppositeOf"         { return OPPOSITE_OF; }
   "<<EOF>>"            { return EOF; }
   "newline"            { return NEWLINE; }
   "CRLF"               { return CRLF; }

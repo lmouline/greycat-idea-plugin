@@ -583,29 +583,85 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ATTRIBUTE_DECLARATION | RELATION_DECLARATION | INDEX_DECLARATION | SUB_CONST_DECLARATION
+  // ATTRIBUTE_DECLARATION | RELATION_DECLARATION | (INDEX_DECLARATION (OPPOSITE_OF IDENT)?) | SUB_CONST_DECLARATION
   public static boolean PROP(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PROP")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PROP, "<prop>");
     r = ATTRIBUTE_DECLARATION(b, l + 1);
     if (!r) r = RELATION_DECLARATION(b, l + 1);
-    if (!r) r = INDEX_DECLARATION(b, l + 1);
+    if (!r) r = PROP_2(b, l + 1);
     if (!r) r = SUB_CONST_DECLARATION(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
+  // INDEX_DECLARATION (OPPOSITE_OF IDENT)?
+  private static boolean PROP_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_2")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = INDEX_DECLARATION(b, l + 1);
+    r = r && PROP_2_1(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // (OPPOSITE_OF IDENT)?
+  private static boolean PROP_2_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_2_1")) return false;
+    PROP_2_1_0(b, l + 1);
+    return true;
+  }
+
+  // OPPOSITE_OF IDENT
+  private static boolean PROP_2_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_2_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, OPPOSITE_OF, IDENT);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   /* ********************************************************** */
-  // TO_ONE_DECLARATION | TO_MANY_DECLARATION
+  // (TO_ONE_DECLARATION | TO_MANY_DECLARATION) (OPPOSITE_OF IDENT)?
   public static boolean RELATION_DECLARATION(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "RELATION_DECLARATION")) return false;
     if (!nextTokenIs(b, "<relation declaration>", REF, REL)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, RELATION_DECLARATION, "<relation declaration>");
+    r = RELATION_DECLARATION_0(b, l + 1);
+    r = r && RELATION_DECLARATION_1(b, l + 1);
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  // TO_ONE_DECLARATION | TO_MANY_DECLARATION
+  private static boolean RELATION_DECLARATION_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "RELATION_DECLARATION_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
     r = TO_ONE_DECLARATION(b, l + 1);
     if (!r) r = TO_MANY_DECLARATION(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
+  // (OPPOSITE_OF IDENT)?
+  private static boolean RELATION_DECLARATION_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "RELATION_DECLARATION_1")) return false;
+    RELATION_DECLARATION_1_0(b, l + 1);
+    return true;
+  }
+
+  // OPPOSITE_OF IDENT
+  private static boolean RELATION_DECLARATION_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "RELATION_DECLARATION_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, OPPOSITE_OF, IDENT);
+    exit_section_(b, m, null, r);
     return r;
   }
 

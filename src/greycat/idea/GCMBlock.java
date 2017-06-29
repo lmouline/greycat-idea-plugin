@@ -56,7 +56,7 @@ public class GCMBlock extends AbstractBlock {
             if (type1 == GCMTypes.CLASS || type1 == GCMTypes.ATT || type1 == GCMTypes.REF || type1 == GCMTypes.REL || type1 == GCMTypes.INDEX || type1 == GCMTypes.TYPE || type1 == GCMTypes.CONST) {
                 return singleSpace();
             }
-            if (type1 == GCMTypes.COLON || type2 == GCMTypes.COLON || type1 == GCMTypes.COMMA || type1 == GCMTypes.EQUALS || type2 == GCMTypes.EQUALS || type2 == GCMTypes.BODY_OPEN || type1 == GCMTypes.USING || type2 == GCMTypes.USING) {
+            if (type1 == GCMTypes.COLON || type2 == GCMTypes.COLON || type1 == GCMTypes.COMMA || type1 == GCMTypes.EQUALS || type2 == GCMTypes.EQUALS || type2 == GCMTypes.BODY_OPEN || type1 == GCMTypes.USING || type2 == GCMTypes.USING || type1 == GCMTypes.OPPOSITE_OF || type2 == GCMTypes.OPPOSITE_OF) {
                 return singleSpace();
             }
             if (type1 == GCMTypes.POPEN || type2 == GCMTypes.PCLOSE || type1 == GCMTypes.POINT || type2 == GCMTypes.POINT || type2 == GCMTypes.ACTION_PARAMS || type2 == GCMTypes.COMMA) {

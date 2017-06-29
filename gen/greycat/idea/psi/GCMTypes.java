@@ -57,6 +57,7 @@ public interface GCMTypes {
   IElementType LINE_COMMENT = new GCMTokenType("line_comment");
   IElementType NEWLINE = new GCMTokenType("newline");
   IElementType NUMBER = new GCMTokenType("NUMBER");
+  IElementType OPPOSITE_OF = new GCMTokenType("oppositeOf");
   IElementType PCLOSE = new GCMTokenType(")");
   IElementType POINT = new GCMTokenType(".");
   IElementType POPEN = new GCMTokenType("(");
