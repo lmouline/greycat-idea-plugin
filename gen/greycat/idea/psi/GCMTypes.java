@@ -13,6 +13,8 @@ public interface GCMTypes {
   IElementType ACTION_DECLARATION = new GCMElementType("ACTION_DECLARATION");
   IElementType ACTION_PARAM = new GCMElementType("ACTION_PARAM");
   IElementType ACTION_PARAMS = new GCMElementType("ACTION_PARAMS");
+  IElementType ANNOTATION = new GCMElementType("ANNOTATION");
+  IElementType ANNOTATION_VALUE = new GCMElementType("ANNOTATION_VALUE");
   IElementType ATTRIBUTE_DECLARATION = new GCMElementType("ATTRIBUTE_DECLARATION");
   IElementType ATTRIBUTE_DEFAULT = new GCMElementType("ATTRIBUTE_DEFAULT");
   IElementType ATTRIBUTE_NAME = new GCMElementType("ATTRIBUTE_NAME");
@@ -39,6 +41,7 @@ public interface GCMTypes {
   IElementType TYPE_DECLARATION = new GCMElementType("TYPE_DECLARATION");
   IElementType VALUE_DECLARATION = new GCMElementType("VALUE_DECLARATION");
 
+  IElementType ANNOT_ID = new GCMTokenType("ANNOT_ID");
   IElementType ATT = new GCMTokenType("att");
   IElementType BLOCK_COMMENT = new GCMTokenType("block_comment");
   IElementType BODY_CLOSE = new GCMTokenType("}");
@@ -78,6 +81,12 @@ public interface GCMTypes {
       }
       else if (type == ACTION_PARAMS) {
         return new GCMActionParamsImpl(node);
+      }
+      else if (type == ANNOTATION) {
+        return new GCMAnnotationImpl(node);
+      }
+      else if (type == ANNOTATION_VALUE) {
+        return new GCMAnnotationValueImpl(node);
       }
       else if (type == ATTRIBUTE_DECLARATION) {
         return new GCMAttributeDeclarationImpl(node);

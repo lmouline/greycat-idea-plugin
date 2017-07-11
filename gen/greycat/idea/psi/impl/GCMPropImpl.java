@@ -29,6 +29,12 @@ public class GCMPropImpl extends ASTWrapperPsiElement implements GCMProp {
 
   @Override
   @Nullable
+  public GCMAnnotation getAnnotation() {
+    return findChildByClass(GCMAnnotation.class);
+  }
+
+  @Override
+  @Nullable
   public GCMAttributeDeclaration getAttributeDeclaration() {
     return findChildByClass(GCMAttributeDeclaration.class);
   }

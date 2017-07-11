@@ -29,6 +29,7 @@ LINE_COMMENT="//".*
 BLOCK_COMMENT="/"\*([^]|\n)*\*"/"
 NUMBER=[\-]?[0-9]+[.]?[0-9]*
 IDENT=[a-zA-Z_][a-zA-Z_0-9]*
+ANNOT_ID=[@][a-zA-Z_0-9]*
 STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
 
 %%
@@ -62,6 +63,7 @@ STRING=('([^'\\]|\\.)*'|\"([^\"\\]|\\.)*\")
   {BLOCK_COMMENT}      { return BLOCK_COMMENT; }
   {NUMBER}             { return NUMBER; }
   {IDENT}              { return IDENT; }
+  {ANNOT_ID}           { return ANNOT_ID; }
   {STRING}             { return STRING; }
 
 }

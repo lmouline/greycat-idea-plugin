@@ -32,6 +32,12 @@ public class GCMParser implements PsiParser, LightPsiParser {
     else if (t == ACTION_PARAMS) {
       r = ACTION_PARAMS(b, 0);
     }
+    else if (t == ANNOTATION) {
+      r = ANNOTATION(b, 0);
+    }
+    else if (t == ANNOTATION_VALUE) {
+      r = ANNOTATION_VALUE(b, 0);
+    }
     else if (t == ATTRIBUTE_DECLARATION) {
       r = ATTRIBUTE_DECLARATION(b, 0);
     }
@@ -189,6 +195,32 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // ANNOT_ID EQUALS ANNOTATION_VALUE
+  public static boolean ANNOTATION(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ANNOTATION")) return false;
+    if (!nextTokenIs(b, ANNOT_ID)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeTokens(b, 0, ANNOT_ID, EQUALS);
+    r = r && ANNOTATION_VALUE(b, l + 1);
+    exit_section_(b, m, ANNOTATION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // IDENT | STRING | NUMBER
+  public static boolean ANNOTATION_VALUE(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ANNOTATION_VALUE")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, ANNOTATION_VALUE, "<annotation value>");
+    r = consumeToken(b, IDENT);
+    if (!r) r = consumeToken(b, STRING);
+    if (!r) r = consumeToken(b, NUMBER);
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
+  /* ********************************************************** */
   // ATT ATTRIBUTE_NAME COLON TYPE_DECLARATION (EQUALS ATTRIBUTE_DEFAULT)?
   public static boolean ATTRIBUTE_DECLARATION(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ATTRIBUTE_DECLARATION")) return false;
@@ -247,7 +279,7 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CLASS TYPE_DECLARATION PARENTS_DECLARATION? BODY_OPEN PROP* BODY_CLOSE
+  // CLASS TYPE_DECLARATION PARENTS_DECLARATION? BODY_OPEN (PROP)* BODY_CLOSE
   public static boolean CLASS_DECLARATION(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "CLASS_DECLARATION")) return false;
     if (!nextTokenIs(b, CLASS)) return false;
@@ -270,16 +302,26 @@ public class GCMParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // PROP*
+  // (PROP)*
   private static boolean CLASS_DECLARATION_4(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "CLASS_DECLARATION_4")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!PROP(b, l + 1)) break;
+      if (!CLASS_DECLARATION_4_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "CLASS_DECLARATION_4", c)) break;
       c = current_position_(b);
     }
     return true;
+  }
+
+  // (PROP)
+  private static boolean CLASS_DECLARATION_4_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "CLASS_DECLARATION_4_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = PROP(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -583,40 +625,41 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ATTRIBUTE_DECLARATION | RELATION_DECLARATION | (INDEX_DECLARATION (OPPOSITE_OF IDENT)?) | SUB_CONST_DECLARATION
+  // ANNOTATION | ATTRIBUTE_DECLARATION | RELATION_DECLARATION | (INDEX_DECLARATION (OPPOSITE_OF IDENT)?) | SUB_CONST_DECLARATION
   public static boolean PROP(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "PROP")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PROP, "<prop>");
-    r = ATTRIBUTE_DECLARATION(b, l + 1);
+    r = ANNOTATION(b, l + 1);
+    if (!r) r = ATTRIBUTE_DECLARATION(b, l + 1);
     if (!r) r = RELATION_DECLARATION(b, l + 1);
-    if (!r) r = PROP_2(b, l + 1);
+    if (!r) r = PROP_3(b, l + 1);
     if (!r) r = SUB_CONST_DECLARATION(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // INDEX_DECLARATION (OPPOSITE_OF IDENT)?
-  private static boolean PROP_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PROP_2")) return false;
+  private static boolean PROP_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_3")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = INDEX_DECLARATION(b, l + 1);
-    r = r && PROP_2_1(b, l + 1);
+    r = r && PROP_3_1(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // (OPPOSITE_OF IDENT)?
-  private static boolean PROP_2_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PROP_2_1")) return false;
-    PROP_2_1_0(b, l + 1);
+  private static boolean PROP_3_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_3_1")) return false;
+    PROP_3_1_0(b, l + 1);
     return true;
   }
 
   // OPPOSITE_OF IDENT
-  private static boolean PROP_2_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "PROP_2_1_0")) return false;
+  private static boolean PROP_3_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "PROP_3_1_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, OPPOSITE_OF, IDENT);

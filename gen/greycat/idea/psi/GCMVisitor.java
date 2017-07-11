@@ -20,6 +20,14 @@ public class GCMVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitAnnotation(@NotNull GCMAnnotation o) {
+    visitPsiElement(o);
+  }
+
+  public void visitAnnotationValue(@NotNull GCMAnnotationValue o) {
+    visitPsiElement(o);
+  }
+
   public void visitAttributeDeclaration(@NotNull GCMAttributeDeclaration o) {
     visitPsiElement(o);
   }

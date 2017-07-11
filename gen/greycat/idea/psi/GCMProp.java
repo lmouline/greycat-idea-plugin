@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface GCMProp extends PsiElement {
 
   @Nullable
+  GCMAnnotation getAnnotation();
+
+  @Nullable
   GCMAttributeDeclaration getAttributeDeclaration();
 
   @Nullable

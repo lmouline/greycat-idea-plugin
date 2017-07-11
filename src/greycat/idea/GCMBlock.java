@@ -92,6 +92,12 @@ public class GCMBlock extends AbstractBlock {
             if (type1 == GCMTypes.PROP && type2 == GCMTypes.PROP) {
                 return newLine();
             }
+            if (type1 == GCMTypes.ANNOTATION && type2 == GCMTypes.PROP) {
+                return newLine();
+            }
+            if (type2 == GCMTypes.ANNOTATION && type1 == GCMTypes.PROP) {
+                return newLine();
+            }
             //other rules
             if (type1 == GCMTypes.LINE_COMMENT) {
                 return Spacing.createSpacing(1, 1, 2, false, 1);
