@@ -21,14 +21,14 @@ import static greycat.idea.psi.GCMTypes.*;
 
 public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
 
-    public static final TextAttributesKey KEYWORD = createTextAttributesKey("MM_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
-    public static final TextAttributesKey STRING = createTextAttributesKey("MM_STRING", DefaultLanguageHighlighterColors.STRING);
-    public static final TextAttributesKey SEPARATOR = createTextAttributesKey("MM_SEPARATOR", DefaultLanguageHighlighterColors.INSTANCE_FIELD);
-    public static final TextAttributesKey COMMENT = createTextAttributesKey("MM_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
-    public static final TextAttributesKey IDENT = createTextAttributesKey("MM_IDENT", DefaultLanguageHighlighterColors.STATIC_METHOD);
-    public static final TextAttributesKey NUMBER = createTextAttributesKey("MM_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
-    // public static final TextAttributesKey ANNOTATION = createTextAttributesKey("MM_ANNOTATION", DefaultLanguageHighlighterColors.METADATA);
-    public static final TextAttributesKey BAD_CHARACTER = createTextAttributesKey("MM_BAD_CHARACTER", new TextAttributes(JBColor.RED, null, null, null, Font.BOLD));
+    public static final TextAttributesKey KEYWORD = createTextAttributesKey("GC_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
+    public static final TextAttributesKey STRING = createTextAttributesKey("GC_STRING", DefaultLanguageHighlighterColors.STRING);
+    public static final TextAttributesKey SEPARATOR = createTextAttributesKey("GC_SEPARATOR", DefaultLanguageHighlighterColors.INSTANCE_FIELD);
+    public static final TextAttributesKey COMMENT = createTextAttributesKey("GC_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
+    public static final TextAttributesKey IDENT = createTextAttributesKey("GC_IDENT", DefaultLanguageHighlighterColors.STATIC_METHOD);
+    public static final TextAttributesKey NUMBER = createTextAttributesKey("GC_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
+    public static final TextAttributesKey ANNOTATION = createTextAttributesKey("GC_ANNOTATION", DefaultLanguageHighlighterColors.METADATA);
+    public static final TextAttributesKey BAD_CHARACTER = createTextAttributesKey("GC_BAD_CHARACTER", new TextAttributes(JBColor.RED, null, null, null, Font.BOLD));
 
     private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
     private static final TextAttributesKey[] KEYWORD_KEYS = new TextAttributesKey[]{KEYWORD};
@@ -43,6 +43,9 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
 
     private static final HashSet<IElementType> KEYWORD_SET = new HashSet<IElementType>(Arrays.asList(CONST, CLASS, INDEX, TYPE, USING, IMPORT, ATT, REL, REF, EXTENDS, OPPOSITE_OF));
     private static final HashSet<IElementType> SEPARATOR_SET = new HashSet<IElementType>(Arrays.asList(COLON, COMMA, BODY_OPEN, BODY_CLOSE, POINT, POPEN, PCLOSE, EQUALS));
+
+    private static final TextAttributesKey[] ANNOTATION_KEYS = new TextAttributesKey[]{ANNOTATION};
+
 
     @NotNull
     @Override
@@ -61,6 +64,10 @@ public class GCMSyntaxHighlighter extends SyntaxHighlighterBase {
             return SEPARATOR_KEYS;
         }
         /* Basic elem */
+
+        if (tokenType.equals(GCMTypes.ANNOTATION)) {
+            return ANNOTATION_KEYS;
+        }
         if (tokenType.equals(GCMTypes.IDENT)) {
             return IDENT_KEYS;
         }
