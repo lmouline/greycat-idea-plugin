@@ -2,9 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a304c1-6ab1-4be1-994a-202f17b7426d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/_GCMLexer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/parser/GCMParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMActionDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMActionParam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMActionParams.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMAnnotation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMAnnotationValue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMAttributeDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMAttributeDefault.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMAttributeName.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMClassDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMComplexValue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMComplexValueDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMConstDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMConstValueDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMCustomTypeDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMImportDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMIndexDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMIndexParams.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMNtupleValue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMParentsDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMProp.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMRelationDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMRelationName.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMSubConstDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMSubTask.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTaskValueDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMToManyDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMToOneDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypeDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypes.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMValueDeclaration.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/GCMVisitor.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMActionDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMActionParamImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMActionParamsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAnnotationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAnnotationValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAttributeDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAttributeDefaultImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAttributeNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMClassDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMComplexValueDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMComplexValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMConstDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMConstValueDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMCustomTypeDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMImportDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMIndexDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMIndexParamsImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMNtupleValueImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMParentsDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMPropImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMRelationDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMRelationNameImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMSubConstDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMSubTaskImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMTaskValueDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMToManyDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMToOneDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMTypeDeclarationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMValueDeclarationImpl.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/greycat-idea-plugin.zip" afterPath="$PROJECT_DIR$/greycat-idea-plugin.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" afterPath="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/greycat/idea/gcm.bnf" afterPath="$PROJECT_DIR$/src/greycat/idea/gcm.bnf" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +96,8 @@
       <file leaf-file-name="gcm.bnf" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+            <state relative-caret-position="292">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding>
                 <element signature="e#635#1987#0" expanded="true" />
                 <element signature="e#1181#1985#0" expanded="true" />
@@ -46,17 +110,17 @@
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMBlock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+              <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GCMSyntaxHighlighter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GCMSyntaxHighlighter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="512">
+              <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -120,21 +184,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GCMTypes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_GCMLexer.flex" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_GCMLexer.flex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+              <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -221,10 +275,10 @@
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMNewFileAction.java" />
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMBlock.java" />
-        <option value="$PROJECT_DIR$/src/greycat/idea/gcm.bnf" />
-        <option value="$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMFormattingModelBuilder.java" />
         <option value="$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java" />
+        <option value="$PROJECT_DIR$/src/greycat/idea/gcm.bnf" />
+        <option value="$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex" />
       </list>
     </option>
   </component>
@@ -289,6 +343,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greycat-idea-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="greycat-idea-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -800,12 +868,12 @@
       <workItem from="1498755874435" duration="2891000" />
       <workItem from="1499266144963" duration="584000" />
       <workItem from="1499760270594" duration="4214000" />
-      <workItem from="1499951839394" duration="375000" />
+      <workItem from="1499951839394" duration="659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64585000" />
+    <option name="totallyTimeSpent" value="64869000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -818,6 +886,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -839,7 +908,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888413" sideWeight="0.49511003" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888413" sideWeight="0.49511003" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2002442" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -906,20 +975,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/structure/GCMStructureViewParentElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMParentsDeclaration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMClassDeclaration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1174,36 +1229,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <marker date="1499761826000" expanded="true" signature="22301:22396" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMTypes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="300">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
-          <folding>
-            <element signature="e#635#1987#0" expanded="true" />
-            <element signature="e#1181#1985#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,15 +1292,50 @@
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/greycat/idea/GCMSyntaxHighlighter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        <state relative-caret-position="512">
+          <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/impl/GCMAnnotationValueImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen/greycat/idea/psi/GCMAnnotationValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greycat/idea/gcm.bnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#635#1987#0" expanded="true" />
+            <element signature="e#1181#1985#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/greycat/idea/_GCMLexer.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding />
         </state>
       </provider>
