@@ -53,6 +53,7 @@ public class GCMBlock extends AbstractBlock {
             if (type1 == GCMTypes.DECLARATION) {
                 return Spacing.createSpacing(1, 1, 2, false, 1);
             }
+
             if (type1 == GCMTypes.CLASS || type1 == GCMTypes.ATT || type1 == GCMTypes.REF || type1 == GCMTypes.REL || type1 == GCMTypes.INDEX || type1 == GCMTypes.TYPE || type1 == GCMTypes.CONST) {
                 return singleSpace();
             }
@@ -79,16 +80,16 @@ public class GCMBlock extends AbstractBlock {
                     return singleSpace();
                 }
             }
-
-
             //default rules
-            if (type1 == GCMTypes.BODY_OPEN) {
+            if (type1 == GCMTypes.BODY_OPEN || type2 == GCMTypes.BODY_CLOSE) {
+                ASTNode parent = (((AbstractBlock) child1).getNode()).getTreeParent();
+                if (parent != null) {
+                    if (parent.getElementType() == GCMTypes.SUB_TASK) {
+                        return singleSpace();
+                    }
+                }
                 return newLine();
             }
-            if (type2 == GCMTypes.BODY_CLOSE) {
-                return newLine();
-            }
-
             if (type1 == GCMTypes.PROP && type2 == GCMTypes.PROP) {
                 return newLine();
             }
