@@ -63,8 +63,7 @@ public class GCMBlock extends AbstractBlock {
             if (type1 == GCMTypes.POPEN || type2 == GCMTypes.PCLOSE || type1 == GCMTypes.POINT || type2 == GCMTypes.POINT || type2 == GCMTypes.ACTION_PARAMS || type2 == GCMTypes.COMMA) {
                 return noSpace();
             }
-
-
+            
             //attribute are always indented
             /*
             if (type2 == GCMTypes.PROP) {

@@ -68,6 +68,9 @@ public class GCMTypeNamedAnnotator implements Annotator {
                         }
                     }
                 });
+                if (casted.getName() != null && (casted.getName().equals("NodeValue") || casted.getName().equals("Node"))) {
+                    isValidated[0] = true;
+                }
                 if (!isValidated[0]) {
                     annotationHolder.createErrorAnnotation(psiElement, "References and Dependencies must have a declared type, please declare corresponding class");
                 }
@@ -95,6 +98,9 @@ public class GCMTypeNamedAnnotator implements Annotator {
                         }
                     }
                 });
+                if (casted.getName() != null && (casted.getName().equals("NodeValue") || casted.getName().equals("Node"))) {
+                    isValidated[0] = true;
+                }
                 if (!isValidated[0]) {
                     annotationHolder.createErrorAnnotation(psiElement, "References and Dependencies must have a declared type, please declare corresponding class");
                 }
