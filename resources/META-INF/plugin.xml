@@ -1,13 +1,14 @@
 <idea-plugin>
     <id>com.datathings.greycat.idea</id>
     <name>GreyCat IDEA</name>
-    <version>2.1</version>
+    <version>2.2</version>
     <vendor email="contact@datathings.com" url="http://www.datathings.com">DataThings</vendor>
     <description><![CDATA[
       This plugin aims at ease the edition of GreyCat Model, later use to generate a typing layer for the GreyCat framework.<br>
       <em>GreyCat is an open source project, source code can be found at <a href="http://greycat.ai">http://greycat.ai</a> or <a href="http://github.com/datathings/greycat">http://github.com/datathings/greycat</a></em>
     ]]></description>
     <change-notes><![CDATA[
+        2.2: fix layout of task constants
         2.1: add annotation ability, fix compatibility with GreyCat 9 constant init
         2.0: new version, compatible with GreyCat 9 preview
         1.0: initial version, supporting basic edition, new file wizzard, completion support...<br>
