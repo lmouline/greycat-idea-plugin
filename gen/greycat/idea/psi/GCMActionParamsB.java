@@ -5,9 +5,9 @@ import java.util.List;
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElement;
 
-public interface GCMActionParams extends PsiElement {
+public interface GCMActionParamsB extends PsiElement {
 
-  @Nullable
-  GCMActionParamsB getActionParamsB();
+  @NotNull
+  List<GCMActionParam> getActionParamList();
 
 }

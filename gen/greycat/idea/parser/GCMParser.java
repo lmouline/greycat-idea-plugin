@@ -32,6 +32,9 @@ public class GCMParser implements PsiParser, LightPsiParser {
     else if (t == ACTION_PARAMS) {
       r = ACTION_PARAMS(b, 0);
     }
+    else if (t == ACTION_PARAMS_B) {
+      r = ACTION_PARAMS_B(b, 0);
+    }
     else if (t == ANNOTATION) {
       r = ANNOTATION(b, 0);
     }
@@ -154,35 +157,53 @@ public class GCMParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // POPEN ACTION_PARAM (COMMA ACTION_PARAM)* PCLOSE
+  // POPEN ACTION_PARAMS_B? PCLOSE
   public static boolean ACTION_PARAMS(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ACTION_PARAMS")) return false;
     if (!nextTokenIs(b, POPEN)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, POPEN);
-    r = r && ACTION_PARAM(b, l + 1);
-    r = r && ACTION_PARAMS_2(b, l + 1);
+    r = r && ACTION_PARAMS_1(b, l + 1);
     r = r && consumeToken(b, PCLOSE);
     exit_section_(b, m, ACTION_PARAMS, r);
     return r;
   }
 
+  // ACTION_PARAMS_B?
+  private static boolean ACTION_PARAMS_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ACTION_PARAMS_1")) return false;
+    ACTION_PARAMS_B(b, l + 1);
+    return true;
+  }
+
+  /* ********************************************************** */
+  // ACTION_PARAM (COMMA ACTION_PARAM)*
+  public static boolean ACTION_PARAMS_B(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ACTION_PARAMS_B")) return false;
+    boolean r;
+    Marker m = enter_section_(b, l, _NONE_, ACTION_PARAMS_B, "<action params b>");
+    r = ACTION_PARAM(b, l + 1);
+    r = r && ACTION_PARAMS_B_1(b, l + 1);
+    exit_section_(b, l, m, r, false, null);
+    return r;
+  }
+
   // (COMMA ACTION_PARAM)*
-  private static boolean ACTION_PARAMS_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ACTION_PARAMS_2")) return false;
+  private static boolean ACTION_PARAMS_B_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ACTION_PARAMS_B_1")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!ACTION_PARAMS_2_0(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "ACTION_PARAMS_2", c)) break;
+      if (!ACTION_PARAMS_B_1_0(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "ACTION_PARAMS_B_1", c)) break;
       c = current_position_(b);
     }
     return true;
   }
 
   // COMMA ACTION_PARAM
-  private static boolean ACTION_PARAMS_2_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "ACTION_PARAMS_2_0")) return false;
+  private static boolean ACTION_PARAMS_B_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "ACTION_PARAMS_B_1_0")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, COMMA);

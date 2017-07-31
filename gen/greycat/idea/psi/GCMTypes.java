@@ -13,6 +13,7 @@ public interface GCMTypes {
   IElementType ACTION_DECLARATION = new GCMElementType("ACTION_DECLARATION");
   IElementType ACTION_PARAM = new GCMElementType("ACTION_PARAM");
   IElementType ACTION_PARAMS = new GCMElementType("ACTION_PARAMS");
+  IElementType ACTION_PARAMS_B = new GCMElementType("ACTION_PARAMS_B");
   IElementType ANNOTATION = new GCMElementType("ANNOTATION");
   IElementType ATTRIBUTE_DECLARATION = new GCMElementType("ATTRIBUTE_DECLARATION");
   IElementType ATTRIBUTE_DEFAULT = new GCMElementType("ATTRIBUTE_DEFAULT");
@@ -80,6 +81,9 @@ public interface GCMTypes {
       }
       else if (type == ACTION_PARAMS) {
         return new GCMActionParamsImpl(node);
+      }
+      else if (type == ACTION_PARAMS_B) {
+        return new GCMActionParamsBImpl(node);
       }
       else if (type == ANNOTATION) {
         return new GCMAnnotationImpl(node);

@@ -12,14 +12,14 @@ import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import greycat.idea.psi.*;
 import greycat.idea.GCMUtil;
 
-public class GCMActionParamsImpl extends ASTWrapperPsiElement implements GCMActionParams {
+public class GCMActionParamsBImpl extends ASTWrapperPsiElement implements GCMActionParamsB {
 
-  public GCMActionParamsImpl(ASTNode node) {
+  public GCMActionParamsBImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull GCMVisitor visitor) {
-    visitor.visitActionParams(this);
+    visitor.visitActionParamsB(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -28,9 +28,9 @@ public class GCMActionParamsImpl extends ASTWrapperPsiElement implements GCMActi
   }
 
   @Override
-  @Nullable
-  public GCMActionParamsB getActionParamsB() {
-    return findChildByClass(GCMActionParamsB.class);
+  @NotNull
+  public List<GCMActionParam> getActionParamList() {
+    return PsiTreeUtil.getChildrenOfTypeAsList(this, GCMActionParam.class);
   }
 
 }
